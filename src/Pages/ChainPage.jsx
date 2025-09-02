@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, Book, Code, Cpu, Users, ArrowRight, X, Terminal, Shield, Rocket, Palette, Zap, Globe, Activity, Database, FileCheck, CreditCard } from 'lucide-react';
+import { Search, Book, Code, Cpu, Users, ArrowRight, X, Terminal, Shield, Rocket, Palette, Zap, Globe, Activity, Database, FileCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // Animation variants
@@ -218,7 +218,34 @@ const StatCard = ({ icon: Icon, label, value }) => (
 
 // Testnet card component
 const TestnetCard = ({ testnet, isCurrent = false }) => {
-  const { name, status, explorerUrl, stats } = testnet;
+  const { name, status, explorerUrl, stats, statsApiUrl } = testnet;
+  const [apiStats, setApiStats] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Fetch stats from API if statsApiUrl is provided
+  useEffect(() => {
+    if (statsApiUrl) {
+      setIsLoading(true);
+      fetch(statsApiUrl)
+        .then(response => response.json())
+        .then(data => {
+          setApiStats({
+            addresses: parseInt(data.total_addresses) || 0,
+            transactions: parseInt(data.total_transactions) || 0,
+            blocks: parseInt(data.total_blocks) || 0,
+          });
+        })
+        .catch(error => {
+          console.error(`Error fetching stats for ${name}:`, error);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
+  }, [statsApiUrl, name]);
+
+  // Use API stats if available, otherwise fallback to hardcoded stats
+  const displayStats = apiStats || stats;
 
   return (
     <motion.div
@@ -254,26 +281,21 @@ const TestnetCard = ({ testnet, isCurrent = false }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-3 gap-4 mb-6">
           <StatCard
             icon={Users}
-            label="Accounts"
-            value={formatNumber(stats.accounts)}
+            label="Addresses"
+            value={isLoading ? "..." : formatNumber(displayStats.addresses)}
           />
           <StatCard
             icon={Activity}
             label="Transactions"
-            value={formatNumber(stats.transactions)}
+            value={isLoading ? "..." : formatNumber(displayStats.transactions)}
           />
           <StatCard
-            icon={CreditCard}
-            label="ETH Transfers"
-            value={formatNumber(stats.ethTransfers)}
-          />
-          <StatCard
-            icon={FileCheck}
-            label="Verified Contracts"
-            value={formatNumber(stats.verifiedContracts)}
+            icon={Database}
+            label="Blocks"
+            value={isLoading ? "..." : formatNumber(displayStats.blocks)}
           />
         </div>
 
@@ -314,10 +336,11 @@ const ChainPage = () => {
       name: 'UOMI Turing',
       status: 'current',
       explorerUrl: 'https://explorer.uomi.ai/',
+      statsApiUrl: 'https://explorer-finney.uomi.ai/api/v2/stats',
       stats: {
-        accounts: 45623,
+        addresses: 45623,
         transactions: 1234567,
-        ethTransfers: 456789,
+        blocks: 456789,
         verifiedContracts: 1234,
       },
     },
@@ -325,10 +348,11 @@ const ChainPage = () => {
       name: 'UOMI Finney',
       status: 'deprecated',
       explorerUrl: 'https://explorer-finney.uomi.ai/',
+      statsApiUrl: 'https://explorer-finney.uomi.ai/api/v2/stats',
       stats: {
-        accounts: 23456,
+        addresses: 23456,
         transactions: 890123,
-        ethTransfers: 234567,
+        blocks: 234567,
         verifiedContracts: 567,
       },
     },
@@ -337,9 +361,9 @@ const ChainPage = () => {
       status: 'deactivated',
       explorerUrl: null,
       stats: {
-        accounts: 12345,
+        addresses: 12345,
         transactions: 345678,
-        ethTransfers: 123456,
+        blocks: 123456,
         verifiedContracts: 234,
       },
     },
