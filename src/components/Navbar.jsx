@@ -395,7 +395,7 @@ const TGEAnnouncementBar = () => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
-        className="relative bg-black/95 backdrop-blur-sm border-b border-white/5"
+        className="relative bg-black/95 backdrop-blur-sm border-b border-white/5 overflow-x-hidden"
       >
         {/* Animated gradient overlay */}
         <motion.div
