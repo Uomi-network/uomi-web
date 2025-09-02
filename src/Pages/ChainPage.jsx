@@ -332,28 +332,26 @@ const TestnetCard = ({ testnet, isCurrent = false }) => {
 // Main component
 const ChainPage = () => {
   const testnets = [
-    {
-      name: 'UOMI Turing',
-      status: 'current',
-      explorerUrl: 'https://explorer.uomi.ai/',
-      statsApiUrl: 'https://explorer-finney.uomi.ai/api/v2/stats',
-      stats: {
-        addresses: 45623,
-        transactions: 1234567,
-        blocks: 456789,
-        verifiedContracts: 1234,
-      },
-    },
+    // {
+    //   name: 'UOMI Turing',
+    //   status: 'current',
+    //   explorerUrl: 'https://explorer.uomi.ai/',
+    //   statsApiUrl: 'https://explorer-finney.uomi.ai/api/v2/stats',
+    //   stats: {
+    //     addresses: 45623,
+    //     transactions: 1234567,
+    //     blocks: 456789,
+    //   },
+    // },
     {
       name: 'UOMI Finney',
-      status: 'deprecated',
+      status: 'current', // 'deprecated',
       explorerUrl: 'https://explorer-finney.uomi.ai/',
       statsApiUrl: 'https://explorer-finney.uomi.ai/api/v2/stats',
       stats: {
-        addresses: 23456,
-        transactions: 890123,
-        blocks: 234567,
-        verifiedContracts: 567,
+        addresses: 283600, // snapshot from explorer 02/09/25
+        transactions: 10000000, // snapshot from explorer 02/09/25
+        blocks: 6000000, // snapshot from explorer 02/09/25
       },
     },
     {
@@ -361,10 +359,9 @@ const ChainPage = () => {
       status: 'deactivated',
       explorerUrl: null,
       stats: {
-        addresses: 12345,
-        transactions: 345678,
-        blocks: 123456,
-        verifiedContracts: 234,
+        addresses: 1,
+        transactions: 1,
+        blocks: 1,
       },
     },
   ];
