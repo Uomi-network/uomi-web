@@ -784,17 +784,15 @@ useEffect(() => {
             <div className="flex items-center gap-4">
               {/* CTA Button */}
               <motion.a
-                href="https://app.uomi.ai/"
+                href="/chain"
                 className="hidden sm:block bg-[#dffe00] text-black px-5 py-2 rounded-full font-semibold shadow-md"
-                target="_blank"
-                rel="noopener noreferrer"
                 whileHover={{
                   scale: 1.05,
                   backgroundColor: "#c8e500",
                 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Join Testnet
+                Explore Network
               </motion.a>
 
               {/* Mobile Menu Button */}
@@ -939,13 +937,11 @@ useEffect(() => {
                 {/* Mobile CTA Button */}
                 <div className="py-4">
                   <motion.a
-                    href="https://app.uomi.ai/"
+                    href="/chain"
                     className="block w-full text-center bg-[#dffe00] text-black py-2.5 rounded-full font-semibold"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     whileTap={{ scale: 0.95 }}
                   >
-                    Join Testnet
+                    Explore Network
                   </motion.a>
                 </div>
               </div>
