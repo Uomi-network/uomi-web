@@ -71,7 +71,7 @@ const Hero3 = () => {
             className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-5 pt-4"
             variants={itemVariants}
           >
-            <motion.button
+            <motion.a
               className="text-black px-6 sm:px-8 py-3 sm:py-3.5 rounded font-bold shadow-xl text-sm sm:text-base w-full sm:w-auto hover:cursor-pointer"
               style={{
                 backgroundColor: "#dffe00",
@@ -80,10 +80,10 @@ const Hero3 = () => {
               whileHover={{ scale: 1.03, backgroundColor: "#c8e500" }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}
-              onClick={() => window.open("./docs", "_blank")}
+              href="/partecipate"
             >
-              <span>START BUILDING</span>
-            </motion.button>
+              <span>JOIN TESTNET</span>
+            </motion.a>
 
             <motion.button
               className="px-6 sm:px-8 py-3 sm:py-3.5 rounded font-bold border border-zinc-700 hover:border-zinc-600 bg-zinc-900/60 backdrop-blur-md shadow-md text-sm sm:text-base w-full sm:w-auto mt-3 sm:mt-0 hover:cursor-pointer"
