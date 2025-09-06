@@ -7,6 +7,37 @@ import { ChevronDown, Menu, X, Calendar  } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 // App & Infrastructure - replaces 📱export const AppIcon = () => (
+export const TokenomicsIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Main circular economy flow */}
+    <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    
+    {/* Central token/coin */}
+    <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    <path d="M10.5 12H13.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+    <path d="M12 10.5V13.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+    
+    {/* Distribution nodes around the circle */}
+    <circle cx="12" cy="4" r="1.5" fill="currentColor" />
+    <circle cx="18.8" cy="8.4" r="1.5" fill="currentColor" />
+    <circle cx="18.8" cy="15.6" r="1.5" fill="currentColor" />
+    <circle cx="12" cy="20" r="1.5" fill="currentColor" />
+    <circle cx="5.2" cy="15.6" r="1.5" fill="currentColor" />
+    <circle cx="5.2" cy="8.4" r="1.5" fill="currentColor" />
+    
+    {/* Flow arrows indicating token circulation */}
+    <path d="M13.5 5.5L15.5 7" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.6" />
+    <path d="M17 9.5L16 11" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.6" />
+    <path d="M17 14.5L15.5 16.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.6" />
+    <path d="M10.5 18.5L8.5 17" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.6" />
+    <path d="M7 14.5L8 13" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.6" />
+    <path d="M7 9.5L8.5 7.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.6" />
+    
+    {/* Economic indicators */}
+    <path d="M15 9C15.5 9.5 15.5 10.5 15 11" stroke="currentColor" strokeWidth="0.75" strokeOpacity="0.5" strokeLinecap="round" />
+    <path d="M9 13C8.5 13.5 8.5 14.5 9 15" stroke="currentColor" strokeWidth="0.75" strokeOpacity="0.5" strokeLinecap="round" />
+  </svg>
+);
 
 export const AppIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -330,6 +361,7 @@ const menuItems = {
           { icon: <RoadmapIcon />, label: "Roadmap", link: "/roadmap" },
           { icon: <BlogIcon />, label: "Blog", link: "/blog" },
           { icon: <UseCasesIcon />, label: "Applications", link: "/applications" },
+          { icon: <TokenomicsIcon />, label: "Tokenomics", link: "/tokenomics" },
         ],
       },
       {

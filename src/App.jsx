@@ -20,6 +20,7 @@ import Grants from './Pages/Grants';
 import Applications from './Pages/Applications';
 import Manifesto from './Pages/Manifesto';
 import ReactGA from 'react-ga4';
+import TokenomicsPage from "./Pages/Tokenomics";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -52,6 +53,7 @@ function App() {
         <Route path="/grants" element={<Grants />} />
         <Route path="/applications" element={<Applications />} />
         <Route path="/manifesto" element={<Manifesto />} />
+        {/* <Route path="/tokenomics" element={<TokenomicsPage />} /> */}
       </Routes>
       
       <Footer isDarkMode={isDarkMode} />
