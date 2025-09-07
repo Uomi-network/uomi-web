@@ -45,7 +45,7 @@ const UnlockScheduleData = [
   {
     category: 'Staking Rewards (Mainnet)',
     schedule: 'Minted over 30 years with halving schedule',
-    percentage: '76.59%'
+    percentage: '76.57%'
   }
 ];
 
@@ -254,30 +254,41 @@ export default function MinimalTokenomicsPage() {
             {
               title: "Fundraising – 3.53%",
               desc: "Structured across multiple rounds to onboard early backers and public participants:",
-              vesting: "Public Sale (55.74%) → 20% TGE, 8-month linear vesting | Private Investors (32.66%) → 5% TGE, 12-month linear vesting | KOL Round (11.6%) → 20% TGE, 8-month linear vesting"
+              vesting: "Public Sale Vesting: (38.22%) → 20% TGE, 8-month linear vesting | Private Investors Vesting: (45.59%) → 5% TGE, 12-month linear vesting | KOL Round Vesting: (16.19%) → 20% TGE, 8-month linear vesting"
             },
             {
-              title: "Staking Rewards (Mainnet) – 76.59%",
+              title: "Staking Rewards (Mainnet) – 76.57%",
               desc: "The largest share of supply is reserved for staking rewards, ensuring network security and validator incentives.",
               vesting: "Not pre-minted. Minted gradually over 30 years through halving cycles in mainnet."
             }
           ].map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white/5 border border-white/10 rounded-lg p-6"
-            >
-              <h3 className="text-xl font-bold text-[#dffe00] mb-3">{item.title}</h3>
-              <p className="text-white/90 mb-3 leading-relaxed">{item.desc}</p>
+           <motion.div
+            key={index}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            className="bg-white/5 border border-white/10 rounded-lg p-6"
+          >
+            <h3 className="text-xl font-bold text-[#dffe00] mb-3">{item.title}</h3>
+            <p className="text-white/90 mb-3 leading-relaxed">{item.desc}</p>
+
+            {item.title === "Fundraising – 3.53%" ? (
+              <ul className="list-disc pl-5 text-white/90 text-sm">
+                <li>Public Sale Vesting: (38.22%) → 20% TGE, 8-month linear vesting</li>
+                <li>Private Investors Vesting: (45.59%) → 5% TGE, 12-month linear vesting</li>
+                <li>KOL Round Vesting: (16.19%) → 20% TGE, 8-month linear vesting</li>
+              </ul>
+            ) : (
               <p className="text-white font-semibold text-sm">
-                <strong>Vesting:</strong> {item.vesting}
+                <strong>Vesting:</strong> <span className="font-normal text-white/90">{item.vesting}</span>
               </p>
-            </motion.div>
-          ))}
+            )}
+          </motion.div>
+                  ))}
         </motion.div>
+
+
 
         {/* Unlock Schedule Chart */}
         <motion.div
