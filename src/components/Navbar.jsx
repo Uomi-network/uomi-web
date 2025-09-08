@@ -816,7 +816,7 @@ useEffect(() => {
             <div className="flex items-center gap-4">
               {/* CTA Button */}
               <motion.a
-                href="https://app.uomi.ai/"
+                href="/partecipate"
                 className="hidden sm:block bg-[#dffe00] text-black px-5 py-2 rounded-full font-semibold shadow-md"
                 target="_blank"
                 rel="noopener noreferrer"
