@@ -276,7 +276,7 @@ export default function MinimalTokenomicsPage() {
             {item.title === "Fundraising – 3.53%" ? (
               <ul className="list-disc pl-5 text-white/90 text-sm">
                 <li>Public Sale Vesting: (38.22%) → 20% TGE, 8-month linear vesting</li>
-                <li>Private Investors Vesting: (45.59%) → 5% TGE, 12-month linear vesting</li>
+                <li>Private Investors Vesting: (45.59%) → 5% TGE, 11.16-month average linear vesting</li>
                 <li>KOL Round Vesting: (16.19%) → 20% TGE, 8-month linear vesting</li>
               </ul>
             ) : (
