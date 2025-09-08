@@ -391,7 +391,7 @@ const TGEAnnouncementBar = () => {
   });
 
   // Data TGE - 10 settembre 2025
-  const tgeDate = new Date('2025-09-10T00:00:00Z');
+  const tgeDate = new Date('2025-09-10T10:00:00Z');
 
   useEffect(() => {
     const calculateTimeLeft = () => {

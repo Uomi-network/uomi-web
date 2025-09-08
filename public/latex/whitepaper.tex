@@ -20,9 +20,10 @@
 \begin{document}
 \maketitle
 
-
 \begin{abstract}
-Public blockchains like Bitcoin and Ethereum can be seen as self-replicating machines, organisms that leverage economic incentives to encourage human participation in their operation and expansion. This paper explores the potential integration of artificial intelligence into these systems, enabling the creation of autonomous economic agents. We propose a novel consensus architecture for a layer-one blockchain designed to embed secure AI computation while minimizing trust assumptions and computational overhead. This secure computing framework, built on the Optimistic Proof of Computation (OPoC) consensus algorithm, enables reliable interactions between smart contracts and AI inferences, facilitating the development of self-sustaining AI economic agents. These entities are represented as NFTs, possessing the capability to transact crypto-assets autonomously on any blockchain, and cover their own computational expenses. By leveraging the OPoC consensus, we ensure robust security and economic incentives, fostering a new generation of blockchain-integrated AI systems.
+
+
+Public blockchains like Bitcoin and Ethereum can be seen as self-replicating machines, organisms that leverage economic incentives to encourage human participation in their operation and expansion. This paper explores the potential integration of artificial intelligence into these systems, enabling the creation of autonomous economic agents. We propose a novel consensus architecture for a layer-one blockchain designed to embed secure AI computation while minimizing trust assumptions and computational overhead. This secure computing framework, built on the Optimistic Proof of Computation (OPoC) consensus algorithm, enables reliable interactions between smart contracts and AI inferences, facilitating the development of self-sustaining AI economic agents. These entities are represented as NFTs on any blockchain, possessing the capability to transact crypto-assets autonomously and cover their own computational expenses. By leveraging the OPoC consensus, we ensure robust security and economic incentives, fostering a new generation of blockchain-integrated AI systems.
 
 
 \end{abstract}
@@ -30,7 +31,7 @@ Public blockchains like Bitcoin and Ethereum can be seen as self-replicating mac
 
 \section{Introduction}
 
-Since the release of "Attention is All You Need", the seminal paper introducing the transformer architecture, there has been an unprecedented advancement in the capabilities of large language models (LLMs). The launch of Instruct LLMs, such as ChatGPT, further highlighted the power of LLMs by aligning their text generation capabilities with human preferences. LLMs have now reached a point where they can pass the Turing Test, which was once considered the ultimate measure of intelligence. However, the efficacy of this test in distinguishing true intelligence has been widely questioned  in recent years. On one hand, critics describe LLMs as merely "statistical parrots" — sophisticated statistical machines that will never achieve human-level intelligence. On the other hand, the undeniable utility of their output, which generates significant economic value, is evidenced by the revenues of companies like OpenAI, Google, and Anthropic.
+Since the release of "Attention is All You Need", the seminal paper introducing the transformer architecture, there has been an unprecedented advancement in the capabilities of large language models (LLMs). The launch of Instruct LLMs, such as ChatGPT, further highlighted the power of LLMs by aligning their text generation capabilities with human preferences. LLMs have now reached a point where they can pass the Turing Test, which was once considered the ultimate measure of intelligence. However, the efficacy of this test in distinguishing true intelligence has been widely questioned in recent years. On one hand, critics describe LLMs as merely "statistical parrots" — sophisticated statistical machines that will never achieve human-level intelligence. On the other hand, the undeniable utility of their output, which generates significant economic value, is evidenced by the revenues of companies like OpenAI, Google, and Anthropic.
 
 With UOMI Network, we introduce a new dimension to AI systems evaluation: the ability to be economically self-sufficient. Recent research, including efforts by Stanford and Google DeepMind, has demonstrated that LLM-powered agents can plan, share news, form relationships, and coordinate activities, showcasing general reasoning capabilities. Moreover, open-source frameworks like BabyAGI and Auto-GPT have facilitated rapid prototyping of complex agents incorporating memory and Retrieval-Augmented Generation (RAG) modules. Despite these advancements, existing agents remain confined to simulated environments and lack real-world economic agency.
 
@@ -66,7 +67,8 @@ verify that an output y is the direct result of the execution of a specific AI m
 Although theoretically feasible, also this approach currently faces practical limitations that prevent its
 application in scenarios requiring intense computation, such as with LLMs, or where latency constraints
 demand responses within seconds. Such a limitation is well understood in the cryptocurrency space,
-in a recent article, Vitalik Buterin has categorized it as ”Cryptographic overhead”. Currently, generating a ZK-SNARK proof for even a modestly sized LLM, with just 1 million parameters, takes
+in a recent article, Vitalik Buterin has categorized it as ”Cryptographic overhead”. Currently,
+generating a ZK-SNARK proof for even a modestly sized LLM, with just 1 million parameters, takes
 approximately 1000 seconds. This is significant, especially considering that lower
 specification models in contemporary usage typically feature at least 7 billion parameters. Furthermore,
 the computational cost to generate such a proof is two to three orders of magnitude greater than the
@@ -371,7 +373,7 @@ Just like for AI, the applications of the UOMI Network can be categorized into t
 
 \subsection{General Application}
 
-The future of AI lies in agentic frameworks. Influential papers such as "Mixture of Agents"  and Aschenbrenner’s "Situational Awareness" highlight this trajectory. Today, we already see the emergence of agentic frameworks like BabyAGI and AutoGPT. These frameworks, combined with the  trajectory of frontier base models pointing beyond the chatbot paradigm towards AI agents, entails a new era for generative AI models capabilities.
+The future of AI lies in agentic frameworks. Influential papers such as "Mixture of Agents" and Aschenbrenner’s "Situational Awareness" highlight this trajectory. Today, we already see the emergence of agentic frameworks like BabyAGI and AutoGPT. These frameworks, combined with the  trajectory of frontier base models pointing beyond the chatbot paradigm towards AI agents, entails a new era for generative AI models capabilities.
 
 The UOMI Network is designed for this future of agentic generative AI models. It enables AI agents to transcend simulated environments and make a tangible impact in the real world through economic agency — the ability to control digital assets. Public blockchains incentivize human participation in their operation and expansion through economic incentives. Similarly, UOMI Network-enabled agents represent a new form of digital life, capable of generating value for humans and covering their own computational expenses within the network.
 
@@ -380,7 +382,25 @@ The UOMI Network is designed for this future of agentic generative AI models. It
 
 \subsubsection{AI Oracles and prediction markets resolvers}
 
-An AI Oracle serves as a bridge between the blockchain and the external world, providing reliable, tamper-proof, and interpreted data feeds that smart contracts can use to make informed decisions. Traditional oracles such as Chainlink relay information such as financial data, weather updates, or sports results, which are then used in decentralized applications (dApps) for various purposes, such as triggering contract conditions or executing trades. With AI integration, oracles can perform more sophisticated tasks, such as interpreting complex datasets, conducting real-time analytics, and making predictive inferences. This means going far beyond the mere bridging of external data to the blockchain by enabling on-chain intelligence of those data. For instance, an AI Oracle could analyze social media trends to predict stock market movements or assess satellite images to decide if an insured event happened or not, all of this without humans in the loop. These AI-enhanced oracles ensure that smart contracts have not only access to high-quality, real-time data but also the actionable interpretation of those, thereby expanding the scope and reliability of decentralized applications. AI oracles are the cornerstone towards fully automated and economically empowered AI systems. A compelling and specialized use case for AI Oracles is their application as resolvers in prediction markets. For instance, consider Polymarket and the presidential elections: by leveraging secure computation on a large language model (LLM), enabled through the OPoC consensus mechanism, it becomes possible to analyze news outlets and determine the winning candidate. This approach has the potential to significantly expand the scope of prediction markets, making it feasible to resolve outcomes for any event with a measurable online presence.
+An AI Oracle serves as a bridge between the blockchain and the external world, providing reliable,
+tamper-proof, and interpreted data feeds that smart contracts can use to make informed decisions.
+Traditional oracles such as Chainlink relay information such as financial data, weather updates, or
+sports results, which are then used in decentralized applications (dApps) for various purposes, such
+as triggering contract conditions or executing trades. With AI integration, oracles can perform more
+sophisticated tasks, such as interpreting complex datasets, conducting real-time analytics, and making
+predictive inferences. This means going far beyond the mere bridging of external data to the blockchain
+by enabling on-chain intelligence of those data. For instance, an AI Oracle could analyze social media
+trends to predict stock market movements or assess satellite images to decide if an insured event
+happened or not, all of this without humans in the loop. These AI-enhanced oracles ensure that smart
+contracts have not only access to high-quality, real-time data but also the actionable interpretation
+of those, thereby expanding the scope and reliability of decentralized applications. AI oracles are
+the cornerstone towards fully automated and economically empowered AI systems. A compelling
+and specialized use case for AI Oracles is their application as resolvers in prediction markets. For
+instance, consider Polymarket and the presidential elections: by leveraging secure computation on a
+large language model (LLM), enabled through the OPoC consensus mechanism, it becomes possible
+to analyze news outlets and determine the winning candidate. This approach has the potential to
+significantly expand the scope of prediction markets, making it feasible to resolve outcomes for any
+event with a measurable online presence.
 
 
 \subsubsection{AI Managed Decentralized Autonomous Organization (DAO) }
@@ -451,7 +471,7 @@ A Decentralized Finance (DeFi) AI Trader utilizes advanced machine learning algo
 
 \subsection{UOMI Token Emission}
 
-The UOMI Network will issue a total of 21 billion tokens. A quantity of 4,919,219,238 tokens will be pre-minted to bootstrap the network’s liquidity, support the governance DAO, and enable the staking requirements to run the nodes. The remaining tokens will be gradually released over a 30-year period to incentivize nodes to execute computations, encourage stakers to select the most effective node operators, and engage token holders in governance activities. At its launch, the network will issue 7,350,000 tokens every 24-hour epoch. The max supply cap is granted by a 3-year halving schedule for the token emission of each epoch. Here below is the issuance schedule detailing rewards per epoch and total and cumulative issuance per year; the epoch reward will start at the launch of the main-net beta scheduled for the 2nd quarter 2025.
+The UOMI Network will issue a total of 21 billion tokens. A quantity of 4,919,219,238 tokens will be pre-minted to bootstrap the network’s liquidity, support the governance DAO, and enable the staking requirements to run the nodes. The remaining tokens will be gradually released over a 30-year period to incentivize nodes to execute computations, encourage stakers to select the most effective node operators, and engage token holders in governance activities. At its launch, the network will issue 7,350,000 tokens every 24-hour epoch. The max supply cap is granted by a 3-years halving schedule for the token emission of each epoch. Here below is the issuance schedule detailing rewards per epoch and total and cumulative issuance per year; the epoch reward will start at the launch of the main-net beta scheduled for the 2nd quarter 2025.
 
 \begin{center}
 ***
@@ -496,112 +516,106 @@ The UOMI Network will issue a total of 21 billion tokens. A quantity of 4,919,21
 The issuance strategy, inspired by the Bitcoin emission schedule, is conceived to ensure a gradual but continuous decrease in token emission that grants strong incentives for the early adopters bootstrapping the network while also ensuring the long-term availability of issuance to incentivize participants.
 The presence of long-term issuance as an incentive to reward node operators cannot be understated; in public blockchains, node incentives can be broadly divided into two main categories: issuance and fees. As protocols mature, the sustainability plan shifts towards having the majority of node operator incentives come from fees rather than issuance, yet it needs to be considered that while issuance is a predictable stream, the fee volume can vary significantly depending on market cycles. Therefore, a combination of both types of incentives is optimal for ensuring stable participation from node operators. Systems like Ethereum’s EIP-1559, for example, elegantly combine these incentives by granting base rewards for node operators while burning excessive fees to help regulate the total token supply. 
 
+\subsection{Staking, Incentives and Slashing}
 
-\subsection{Staking, Incentives, and Slashing}
+In order to discourage Byzantine behavior among nodes utilizing both the Proof of Stake (PoS) and Optimistic Proof of Computation (OPoC) consensus algorithms, there are two types of staking participants within the UOMI blockchain ecosystem: node operators (direct stakers) and general token holders that can stake towards nodes (delegate stakers). Both groups are susceptible to penalties, known as slashing, if the node operators violate the rules of the consensus protocols. 
+The emission of each epoch \(T\) is completely distributed at the epoch's end to the network participants that met the staking criteria and complied with the protocol consensus rules in epochs \( T_{-1} \) and \(T_0\). Only in the case of inactivity leak, described in the former chapters rewards are not distributed. It is not necessary that a validator produced any inference under OPoC during the epoch to be eligible for the rewards, since the availability of the computing power has a value - and a cost for the provider - whether it is used or not. 
+Yet, in case a validator is randomly selected to run a computation, and it does not perform it - inactivity leak -, he will be slashed by an amount equal to issuance that would have been assigned to him in case it did perform the computation correctly. No rewards will be distributed to such a validator until he is selected again to run a computation and perform it correctly. In case a disagreement on a computation arises, all of the stakes of the byzantine validators will be slashed. 
 
-To discourage Byzantine behavior among nodes utilizing the Proof of Stake (PoS) and Optimistic Proof of Computation (OPoC) consensus algorithms, the UOMI blockchain ecosystem features two types of staking participants: node operators (direct stakers) and general token holders who can stake towards nodes (delegate stakers). Both groups are susceptible to penalties, known as slashing, if their node - or chosen node operator - violates the rules of the consensus protocols.
+The minimum direct staking requirement to run a node is 8,000,000 UOMI tokens. Balances exceeding the maximum staking amount will not account for the calculation of the share of issuance distribution. Such a limit ensures that there is limited variability in the value at stake for each node, avoiding excessive incentive extraction by single actors and enforcing a comparable value at risk for each validator.
+Issuance rewards can be withdrawn by node operators only once they reach the amount of 4,000,000 token rewards. Such a rule facilitates the onboarding of new node operators by decreasing the entry barrier to 8,000,000 UOMI tokens, yet it allows for the maximization of capital at stake and, thus, economic assurances of both the POS and OPoC consensus mechanisms. It’s also worth to mention that such a rule increases the protocol’s direct staking “working capital”, that is the number of tokens absorbed by the network from the market.
+Taken issued during each epoch - excluding the inactivity leak epochs - will be distributed to participants based on their staking or holding of eligible assets. The system supports three categories of participants:
 
-The emission of each epoch T is completely distributed at the epoch’s end to network participants who met the staking criteria and complied with the protocol consensus rules in epochs \( T_{-1} \) and \(T_0\). Rewards are only withheld in the case of an "inactivity leak," as described in previous chapters. It is not necessary for a validator to have produced an inference under OPoC during an epoch to be eligible for rewards. The availability of computing power has intrinsic value—and a cost for the provider—whether it is used or not.
-
-However, if a validator is randomly selected to run a computation and fails to perform it (an inactivity leak), they will be slashed by an amount equal to the issuance they would have been assigned had they performed the computation correctly. No rewards will be distributed to such a validator until they are selected again and correctly perform a computation. In the event of a disagreement on a computation, the entire stake of the Byzantine validators involved will be slashed.
-
-The minimum direct staking requirement to run a node is 8,000,000 UOMI tokens. To enhance the network's security, issuance rewards can be withdrawn by node operators only after they have accumulated 4,000,000 UOMI in rewards. This rule facilitates the onboarding of new operators by maintaining a manageable entry barrier of 8,000,000 UOMI, while simultaneously maximizing the capital at stake and thus the economic assurances of both the PoS and OPoC consensus mechanisms. It is also worth mentioning that this rule increases the protocol's direct staking 'working capital', that is, the number of tokens absorbed by the network from the market.
-
-Tokens issued during each epoch will be distributed to two categories of participants:
 \begin{itemize}
-    \item \textbf{Stakers (Direct and Delegate):} Rewards are distributed to participants who stake UOMI tokens, either by operating a node directly or by delegating their tokens to a node operator.
-    \item \textbf{AI Agent NFT holders:} Rewards are automatically allocated to NFT holders, with each NFT receiving an equal share of the pool designated for this category, without requiring any staking action.
+    \item Direct stakers: Rewards are distributed to participants who stake UOMI tokens and operate Nodes.
+    \item veUOMI stakers: Rewards are distributed to participants who stake veUOMI tokens.
+    \item AI Agent NFT holders: Rewards are automatically allocated to NFT holders, with each NFT receiving an equal share of the pool designated for this category, without requiring staking.
 \end{itemize}
-
 \subsection*{Reward Allocation Breakdown}
 
-The total rewards issued during each epoch (excluding those affected by an inactivity leak) are distributed as follows:
-\begin{itemize}
-    \item \textbf{Stakers (Direct and Delegate):} 95\% of the epoch rewards.
-    \item \textbf{AI Agent NFT holders:} 5\% of the epoch rewards, with each of the 1024 NFTs receiving an equal share of this pool.
-\end{itemize}
+The total rewards issued during each epoch (excluding inactivity leak epochs) are distributed as follows:
 
-This unified model ensures that all staked capital is rewarded proportionally from the same pool. Node operators may charge a commission fee on the rewards earned by their delegates, creating a competitive market for delegation services and providing an additional revenue stream for node operators.
+\begin{itemize}
+    \item \textbf{Direct stakers}: 70\% of the epoch rewards.
+    \item \textbf{veUOMI stakers}: 25\% of the epoch rewards.
+    \item \textbf{AI Agent NFT holders}: 5\% of the epoch rewards, with each NFT receiving $\frac{1}{1024}$ of the assigned pool.
+\end{itemize}
 
 \subsection*{Formalizing the Distribution}
 
 The distribution of rewards can be expressed using the following variables:
+
 \begin{itemize}
-    \item $R$: Total tokens issued for distribution in an epoch.
-    \item $s_i$: The individual stake of a participant $i$ (can be a direct or delegate staker).
-    \item $S_T$: The total amount of UOMI tokens staked in the network ($S_T = \sum s_i$).
-    \item $S_A = 1024$: The total number of AI Agent NFTs.
-    \item $p_S, p_A$: Proportions of the issuance for stakers and AI Agent NFTs, set at 95\% and 5\%, respectively.
-    \item $f_n$: The commission fee rate set by a node operator $n$.
+    \item \( R \): Total tokens issued for distribution in epoch \( T_0 \).
+    \item \( s_{i,D} \): Stake of a direct staker \( i \).
+    \item \( s_{i,V} \): Stake of a veUOMI staker \( i \).
+    \item \( S_D \), \( S_V \): Total stakes of direct stakers and veUOMI stakers, respectively.
+    \item \( S_A = 1024 \): Total number of AI Agent NFTs, treated as having equal weight.
+    \item \( p_D, p_V, p_A \): Proportions of the issuance for direct stakers, veUOMI stakers, and AI Agent NFTs, set at \( 70\%\), \( 25\%\), and \( 5\%\), respectively.
 \end{itemize}
 
-The gross reward for any staked UOMI token is calculated proportionally to its share of the total stake. The gross reward for a staker $i$ is:
+The reward for a participant \( i \) in their respective category is calculated as:
+
 \[
-R_{i,gross} = R \times p_S \times \frac{s_i}{S_T}
+R_i = R \times p_c \times \frac{s_{i,c}}{S_c}
 \]
 
-The final reward depends on the participant's role:
+Where:
 \begin{itemize}
-    \item \textbf{Delegate Staker:} A delegate staker $i$ who stakes towards node $n$ receives their gross reward minus the node's commission fee:
-    \[
-    R_{i,net} = R_{i,gross} \times (1 - f_n)
-    \]
-
-    \item \textbf{Node Operator (Direct Staker):} A node operator $n$ earns rewards from their own stake plus the commission fees collected from all their delegates:
-    \[
-    R_{n,net} = \left(R \times p_S \times \frac{s_{n,direct}}{S_T}\right) + \sum_{j \in \text{delegates}(n)} \left(R \times p_S \times \frac{s_j}{S_T} \times f_n\right)
-    \]
-    where $s_{n,direct}$ is the node's own stake and $s_j$ is the stake of a delegator $j$ to that node.
-
-    \item \textbf{AI Agent NFT Holder:} Each NFT holder receives an equal share of the designated pool:
-    \[
-    R_{NFT} = \frac{R \times p_A}{S_A}
-    \]
+    \item \( R_i \): Reward for participant \( i \).
+    \item \( p_c \): Proportion of the total issuance for the category (\( p_D, p_V, p_A \)).
+    \item \( s_{i,c} \): Stake of participant \( i \) in their category.
+    \item \( S_c \): Total stake in the category (\( S_D, S_V \), or \( S_A = 1024 \)).
 \end{itemize}
 
 \subsection*{Example Calculations}
 
-\subsubsection*{Scenario}
+\subsubsection*{1. Direct Staker Example}
+
+Suppose:
 \begin{itemize}
-    \item Total epoch reward ($R$): 100,000 UOMI
-    \item Total staked UOMI ($S_T$): 100,000,000 UOMI
+    \item \( R = 100,000 \) tokens (total epoch reward).
+    \item \( S_D = 50,000,000 \) tokens (total direct staker stake).
+    \item A specific direct staker holds \( s_{i,D} = 8,000,000 \) tokens.
 \end{itemize}
 
-\begin{enumerate}
-    \item \textbf{Node Operator (Direct Staker) Example} \\
-    A node operator runs a node with a direct stake of \textbf{8,000,000 UOMI}. They have attracted \textbf{12,000,000 UOMI} in delegations from other token holders and have set a commission fee ($f_n$) of \textbf{10\%}.
-    \begin{itemize}
-        \item \textbf{Reward from own stake:}
-        \[ 100,000 \times 0.95 \times \frac{8,000,000}{100,000,000} = 7,600 \text{ UOMI} \]
-        \item \textbf{Gross rewards generated by delegates:}
-        \[ 100,000 \times 0.95 \times \frac{12,000,000}{100,000,000} = 11,400 \text{ UOMI} \]
-        \item \textbf{Commission collected from delegates:}
-        \[ 11,400 \times 0.10 = 1,140 \text{ UOMI} \]
-        \item \textbf{Total reward for the Node Operator:}
-        \[ 7,600 + 1,140 = 8,740 \text{ UOMI} \]
-    \end{itemize}
+The reward for this direct staker is:
 
-    \item \textbf{Delegate Staker Example} \\
-    A delegate staker has staked \textbf{1,000,000 UOMI} to the node from the example above (which charges a 10\% fee).
-    \begin{itemize}
-        \item \textbf{Gross reward for the delegate:}
-        \[ 100,000 \times 0.95 \times \frac{1,000,000}{100,000,000} = 950 \text{ UOMI} \]
-        \item \textbf{Commission paid to the node operator:}
-        \[ 950 \times 0.10 = 95 \text{ UOMI} \]
-        \item \textbf{Net reward for the Delegate Staker:}
-        \[ 950 - 95 = 855 \text{ UOMI} \]
-    \end{itemize}
+\[
+R_{i,D} = 100,000 \times 0.70 \times \frac{8,000,000}{50,000,000} = 11,200 \text{ tokens.}
+\]
 
-    \item \textbf{AI Agent NFT Holder Example} \\
-    The total pool for NFT holders is $100,000 \times 0.05 = 5,000$ UOMI.
-    \begin{itemize}
-        \item \textbf{Reward per NFT:}
-        \[ \frac{5,000}{1024} \approx 4.88 \text{ UOMI} \]
-    \end{itemize}
-\end{enumerate}
+\subsubsection*{2. veUOMI Staker Example}
 
-This structure aims to create a robust and equitable distribution of rewards. It directly incentivizes both securing the network through node operation and broad participation in network security through delegation, all while proportionally rewarding capital provision. Node operators are further motivated to perform reliably and offer competitive fees to attract delegates. The allocation to AI Agent NFT holders remains a core component, supporting the existence and operation of intelligent agents within the ecosystem.
+Suppose:
+\begin{itemize}
+    \item \( R = 100,000 \) tokens (total epoch reward).
+    \item \( S_V = 20,000,000 \) tokens (total veUOMI staker stake).
+    \item A specific veUOMI staker holds \( s_{i,V} = 5,000,000 \) tokens.
+\end{itemize}
 
+The reward for this veUOMI staker is:
+
+\[
+R_{i,V} = 100,000 \times 0.25 \times \frac{5,000,000}{20,000,000} = 6,250 \text{ tokens.}
+\]
+
+\subsubsection*{3. AI Agent NFT Holder Example}
+
+Suppose:
+\begin{itemize}
+    \item \( R = 100,000 \) tokens (total reward for the epoch).
+    \item \( S_A = 1024 \) NFTs.
+\end{itemize}
+
+Each AI Agent NFT receives an equal share of the pool designated for this category:
+
+\[
+R_{i,A} = \frac{R \times 0.05}{1024} = \frac{100,000 \times 0.05}{1024} \approx 4.88 \text{ tokens per NFT.}
+\]
+
+
+This system aims at a balanced and fair distribution of rewards among all participants in the UOMI ecosystem. Direct stakers for securing the network, veUOMI stakers for reducing the circulating supply of UOMI tokens and participating to governance, and AI Agent NFT holders for supporting the existence of AI Agents. More details on the veUOMI creation mechanics and issuance granted to AI Agent NFTs in the following chapters.
 
 
 \subsection{Inference cost}
@@ -625,14 +639,13 @@ To calculate the cost of each inference will use the following formula:
 
 
 
-Computational complexity is defined in different ways depending of the kind of AI model we’re dealing with, for example for LLMs the formula will be the following:
+Computational complexity is defined in different ways depending of the kind of AI model we’re dealing with, for eaxmple for LLMs the formula will be the following:
 
 \[\text{Computational Complexity} = \text{In\_Tokens} \times \text{MC\_i} + \text{Out\_Tokens} \times \text{MC\_o} \]
 
 
-
-Where \text{In\_Tokens} is the number of tokens in input, \text{Out\_Tokens} is the number of tokens in output, \text{MC\_i} is the cost for the input tokens of a specific model family and dimension, \text{MC\_o} is the cost for the output tokens of a specific model family and dimension.  Examples of model families are LLAMA2-3, CODELLAMA,  MIXTURE-OF-EXPERTS, or EMBEDDING, all of which come in different sizes.  \(v\) is the number of validators required to partecipate in the first step of OPoC consensus algorithm. Such a pricing mechanic allows to the publisher of the agent to establish the computational cost by tweaking v based on his understanding of how secure the computation should be. For example if the AI Agent is a simple Telegram bot that does not involve any relation to economic value exchange, the publisher will set \(v\) to 1, reaching a cost for inference aligned with any other API Web2 service. Conversely, if the published AI Agent is signing transactions on-chain and transacting value, the publisher will set \(v\) to a level that grants an economic security \(>=\) to the expected average value managed by the inference. 
-In the first phase, the value of \text{MC\_i} and \text{MC\_o} will be decided for each model family by the DAO with the aim of matching the major cloud compute providers cost, in a second phase the pricing will be updated by pricing oracle feed. It's important to note that the inference network is not limited to LLMs but can run arbitrary AI algorithms, for image family models for example, \text{Computational Complexity} is defined as: 
+Where In Tokens is the number of tokens in input, Out Tokens is the number of tokens in output, MC i is the cost for the input tokens of a specific model family and dimension, MC o is the cost for the output tokens of a specific model family and dimension.  Examples of model families are LLAMA2-3, CODELLAMA,  MIXTURE-OF-EXPERTS, or EMBEDDING, all of which come in different sizes.  \(v\) is the number of validators required to participate in the first step of OPoC consensus algorithm. Such a pricing mechanic allows to the publisher of the agent to establish the computational cost by tweaking v based on his understanding of how secure the computation should be. For example if the AI Agent is a simple Telegram bot that does not involve any relation to economic value exchange, the publisher will set \(v\) to 1, reaching a cost for inference aligned with any other API Web2 service. Conversely, if the published AI Agent is signing transactions on-chain and transacting value, the publisher will set \(v\) to a level that grants an economic security \(>=\) to the expected average value managed by the inference. 
+In the first phase, the value of MC i and MC o will be decided for each model family by the DAO with the aim of matching the major cloud compute providers cost, in a second phase the pricing will be updated by pricing oracle feed. It's important to note that the inference network is not limited to LLMs but can run arbitrary AI algorithms, for image family models for example, Computational Complexity is defined as: 
 
 \[\text{Computational Complexity} = \text{Image\_size} \times \text{N\_steps} \times \text{MC\_o} \]
 
@@ -712,6 +725,7 @@ The issuance of each new AI Agent NFT will incur a linear increase in cost. This
 The initial price for the first AI Agent NFT is set at 800 USD, payable in UOMI tokens. Each subsequent AI Agent NFT minted will cost 5 USD more than the previous one.
 
 
+
 ***
 "type": "picture",
 "src": "/latex/img5.jpeg",
@@ -719,10 +733,15 @@ The initial price for the first AI Agent NFT is set at 800 USD, payable in UOMI 
 ***
 
 
+Should there be a surge in demand for AI Agent NFTs, the DAO retains the authority to lift the minting cap, provided that the network's parallel computational capabilities are sufficiently augmented to handle the increased demand.
+
+
+
 \section{The DAO and veUOMI:  towards minimized decentralized governance of the protocol
 }
 
 Onchain governance is a complex and widely discussed topic, at a high level, the “blockchain space” itself can be seen as a giant experiment in human coordination. As described by Vitalik Buterin throughout its writings, there are several potential advantages and disadvantages that need to be considered when structuring formal on-chain governance systems, here below is a high-level list of those :
+
 
 Advantages 
 
@@ -732,7 +751,7 @@ Advantages
 
 \item By creating an explicit decentralized voting framework, it reduces the instability that could lead to chain splits that not only destroy network effects but could  also lead to the creation of a stifling mono-culture of ultra-aligned participants 
 
-\item Formal on-chain governance avoids the centralization forces that emerge in  unstructured forms of governance where unofficial and unaccountable leaderships and structures naturally emerge
+\item Formal on-chain governance avoids the centralization forces that emerge in  unstructured forms of governance where unofficial and unaccountable leaderships and structures naturally emerge 
 
 \item On-chain governance used to select validators also has the benefit that it allows for networks that impose high computational performance requirements on validators to avoid economic centralization risks that often appear in public blockchains.
 
@@ -761,9 +780,13 @@ The parameters subjected to the DAO voting are the following:
 \begin{itemize}
 
 \item Base AI models that can be part of the network's computational universe
-\item Cost per \text{In\_Tokens}, \text{Out\_Tokens} ,\text{Image\_size}, \text{N\_steps} for each AI model
+
+\item Cost per In-Tokens, Out-Tokens, Image-size, N-steps for each AI model
+
 \item Changes to minimal staking requirements per node
+
 \item Increases in the soft cap of AI Agents NFTs emissions
+
 \item Changes in the split mix for Network Incentives categories: Token Burn and AI Agent Publishers Incentives
 
 \end{itemize}
@@ -793,14 +816,9 @@ veUOMI tokens are created by escrowing UOMI tokens in a smart contract vault, on
 
 This mechanic maximizes the goal of UOMI token velocity reduction, - removing UOMI tokens from circulation -  also eliminating the friction created by non-transferability of the classic veTOKEN model. Yet, the transferability of the veUOMI tokens without any additional constrain for voting would endanger the "Skin in the game" part of the veTOKEN value proposition. To reintroduce the incentive alignment between veUOMI holding and protocol interests, a lockup of one month will be required to be able to vote with the staked veUOMI tokens. In this way any adversarial governance attack would have a direct economic impact on the voting veUOMI holder; in fact, because of the veUOMI vault redeem mechanics, the value of veUOMI tokens can be modeled as the UOMI token value discounted by average locking time * volatility.  
 
-Summarizing, the veUOMI tokens represents a liquid version of long-term commitment to the protocol because of their escrow-vault issuing mechanics and reduces UOMI token velocity, the one-month voting lockup requirements for the utilization of veUOMI to vote grant "Skin in the game" and thus incentives alignment with UOMI holders for voting participants.
- 
+Summarizing, the veUOMI token flywheel works as follows: veUOMI token existence is granted by the incentives to stake veUOMI tokens to receive the 25\% of UOMI issuance, veUOMI tokens represents a liquid version of long-term commitment to the protocol because of their escrow-vault issuing mechanics and reduces UOMI token velocity, the one-month voting lockup requirements for the utilization of veUOMI to vote grant "Skin in the game" and thus incentives alignment with UOMI holders for voting participants.
+  
 
 Wider changes in the UOMI protocol will rely on a more informal and loosely coupled voting system that will be used as a community decision signaling function rather than an enaction tool for changes to the protocol. While the decisions will be included in the new versions of the client, the actual implementation will depend on node operators agreeing to update their software.
-
-\clearpage
-
-\bibliographystyle{alpha}
-\bibliography{bibliography.bib}
 
 \end{document}
