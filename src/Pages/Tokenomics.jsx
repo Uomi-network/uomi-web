@@ -39,7 +39,7 @@ const UnlockScheduleData = [
   },
   {
     category: 'Fundraising (Public Sale & KOL Round)',
-    schedule: 'Public Sale & KOL Round: 20% TGE, 8 months linear vesting, private: 5% TGE, 8-month linear vesting',
+    schedule: 'Public Sale & KOL Round: 20% TGE, 8 months linear vesting, private: 5% TGE, average 11.2-month linear vesting',
     percentage: '3.62%'
   },
   {
