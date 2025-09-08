@@ -5,7 +5,7 @@ const UnlockScheduleData = [
   {
     category: 'Foundation Reserves',
     schedule: '0% TGE, linear vesting over 6 years',
-    percentage: '4.49%'
+    percentage: '4.40%'
   },
   {
     category: 'Ecosystem Fund',
@@ -14,7 +14,7 @@ const UnlockScheduleData = [
   },
   {
     category: 'Team Fund',
-    schedule: '0% TGE, 6-month cliff, linear vesting over 3 years',
+    schedule: '0% TGE, 3-month cliff, linear vesting over 3 years',
     percentage: '4.18%'
   },
   {
@@ -39,7 +39,7 @@ const UnlockScheduleData = [
   },
   {
     category: 'Fundraising (Public Sale & KOL Round)',
-    schedule: 'Public Sale & KOL Round: 20% TGE, 8 months linear vesting, private: 5% TGE, 12 months linear vesting',
+    schedule: 'Public Sale & KOL Round: 20% TGE, 8 months linear vesting, private: 5% TGE, 8-month linear vesting',
     percentage: '3.62%'
   },
   {
@@ -217,7 +217,7 @@ export default function MinimalTokenomicsPage() {
         >
           {[
             {
-              title: "Foundation Reserves – 4.49%",
+              title: "Foundation Reserves – 4.40%",
               desc: "Reserved for the UOMI Foundation to sustain long-term operations, governance, marketing and research.",
               vesting: "0% TGE, no cliff, linear vesting over 6 years."
             },
@@ -229,7 +229,7 @@ export default function MinimalTokenomicsPage() {
             {
               title: "Team Fund – 4.18%",
               desc: "Allocated to the UOMI employees, developers, and early builders of UOMI.",
-              vesting: "0% TGE, 6-month cliff, linear vesting over 3 years."
+              vesting: "0% TGE, 3-month cliff, linear vesting over 3 years."
             },
             {
               title: "Liquidity (DEX/CEX) – 3.75%",
