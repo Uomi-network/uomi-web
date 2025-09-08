@@ -40,7 +40,7 @@ const UnlockScheduleData = [
   {
     category: 'Fundraising (Public Sale & KOL Round)',
     schedule: 'Public Sale & KOL Round: 20% TGE, 8 months linear vesting, private: 5% TGE, 12 months linear vesting',
-    percentage: '3.53%'
+    percentage: '3.62%'
   },
   {
     category: 'Staking Rewards (Mainnet)',
@@ -252,9 +252,9 @@ export default function MinimalTokenomicsPage() {
               vesting: "0% TGE, 3-month cliff, 3-month vesting."
             },
             {
-              title: "Fundraising – 3.53%",
+              title: "Fundraising – 3.62%",
               desc: "Structured across multiple rounds to onboard early backers and public participants:",
-              vesting: "Public Sale Vesting: (38.22%) → 20% TGE, 8-month linear vesting | Private Investors Vesting: (45.59%) → 5% TGE, 12-month linear vesting | KOL Round Vesting: (16.19%) → 20% TGE, 8-month linear vesting"
+              vesting: "Public Sale Vesting: (40.32%) → 20% TGE, 8-month linear vesting | Private Investors Vesting: (43.91%) → 5% TGE, average 11.2-month linear vesting | KOL Round Vesting: (15.78%) → 20% TGE, 8-month linear vesting"
             },
             {
               title: "Staking Rewards (Mainnet) – 76.57%",
@@ -273,11 +273,11 @@ export default function MinimalTokenomicsPage() {
             <h3 className="text-xl font-bold text-[#dffe00] mb-3">{item.title}</h3>
             <p className="text-white/90 mb-3 leading-relaxed">{item.desc}</p>
 
-            {item.title === "Fundraising – 3.53%" ? (
+            {item.title === "Fundraising – 3.62%" ? (
               <ul className="list-disc pl-5 text-white/90 text-sm">
-                <li>Public Sale Vesting: (38.22%) → 20% TGE, 8-month linear vesting</li>
-                <li>Private Investors Vesting: (45.59%) → 5% TGE, 11.16-month average linear vesting</li>
-                <li>KOL Round Vesting: (16.19%) → 20% TGE, 8-month linear vesting</li>
+                <li>Public Sale Vesting: (40.32%) → 20% TGE, 8-month linear vesting</li>
+                <li>Private Investors Vesting: (43.91%) → 5% TGE, average 11.2-month linear vesting</li>
+                <li>KOL Round Vesting: (15.78%) → 20% TGE, 8-month linear vesting</li>
               </ul>
             ) : (
               <p className="text-white font-semibold text-sm">
