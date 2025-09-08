@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, Users, Twitter, MessageCircle, Coins, ArrowRight, X, Zap, Globe, Gift, Star, Activity, TrendingUp } from 'lucide-react';
+import { Search, Users, Twitter, MessageCircle, Coins, ArrowRight, X, Zap, Globe, Gift, Star, Activity, TrendingUp, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // Animation variants
@@ -184,14 +184,14 @@ const AnimatedBackground = () => {
 };
 
 // Task card component
-const TaskCard = ({ icon: Icon, title, description, action, actionUrl, typology = 'default', category }) => (
+const TaskCard = ({ icon: Icon, title, description, action, actionUrl, typology = 'default', category, isActive = true }) => (
   <motion.div
     variants={gridItemVariants}
-    className={`group relative`}
+    className={`group relative ${!isActive ? 'opacity-60' : ''}`}
   >
     <div className="absolute inset-0 bg-gradient-to-b from-[#dffe00]/10 to-transparent opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-300"></div>
     
-    <div className={`relative p-6 border border-zinc-800/50 bg-zinc-900/30 backdrop-blur-sm rounded-xl h-full flex flex-col ${typology == 'priority' ? 'ring-2 ring-[#dffe00]/30' : ''}`}>
+    <div className={`relative p-6 border border-zinc-800/50 bg-zinc-900/30 backdrop-blur-sm rounded-xl h-full flex flex-col ${typology == 'priority' ? 'ring-2 ring-[#dffe00]/30' : ''} ${!isActive ? 'border-zinc-800/30' : ''}`}>
       <div className="flex items-start justify-between mb-4">
         <div
           className="p-3 rounded-lg w-12 h-12 flex items-center justify-center transition-all duration-300"
@@ -215,29 +215,37 @@ const TaskCard = ({ icon: Icon, title, description, action, actionUrl, typology 
       </div>
       
       <div className="flex-grow">
-        <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#dffe00] transition-colors duration-300">
+        <h3 className={`text-xl font-bold mb-2 transition-colors duration-300 ${isActive ? 'text-white group-hover:text-[#dffe00]' : 'text-zinc-500'}`}>
           {title}
         </h3>
-        <p className="text-zinc-400 text-sm leading-relaxed mb-4">
+        <p className={`text-sm leading-relaxed mb-4 ${isActive ? 'text-zinc-400' : 'text-zinc-500'}`}>
           {description}
         </p>
         
-        <div className="text-xs text-[#dffe00] mb-4 font-medium uppercase tracking-wider">
+        <div className={`text-xs mb-4 font-medium uppercase tracking-wider ${isActive ? 'text-[#dffe00]' : 'text-zinc-600'}`}>
           {category}
         </div>
       </div>
       
-      <motion.button
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        className="w-full bg-zinc-800/50 hover:bg-[#dffe00]/10 border border-zinc-700 hover:border-[#dffe00]/30 
-          rounded-lg px-4 py-3 text-white hover:text-[#dffe00] transition-all duration-300 
-          flex items-center justify-center gap-2 font-medium"
-        onClick={() => actionUrl && window.open(actionUrl, '_blank')}
-      >
-        <span>{action}</span>
-        <ArrowRight size={16} />
-      </motion.button>
+      {isActive ? (
+        <motion.button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="w-full bg-zinc-800/50 hover:bg-[#dffe00]/10 border border-zinc-700 hover:border-[#dffe00]/30 
+            rounded-lg px-4 py-3 text-white hover:text-[#dffe00] transition-all duration-300 
+            flex items-center justify-center gap-2 font-medium"
+          onClick={() => actionUrl && window.open(actionUrl, '_blank')}
+        >
+          <span>{action}</span>
+          <ArrowRight size={16} />
+        </motion.button>
+      ) : (
+        <div className="w-full bg-zinc-800/30 border border-zinc-800/50 rounded-lg px-4 py-3 
+          text-zinc-500 flex items-center justify-center gap-2 font-medium cursor-not-allowed">
+          <Clock size={16} />
+          <span>Soon</span>
+        </div>
+      )}
     </div>
   </motion.div>
 );
@@ -262,8 +270,8 @@ const OverviewSection = () => (
       
       <div className="grid md:grid-cols-3 gap-6">
         <motion.div variants={gridItemVariants} className="text-center p-6 bg-black/30 rounded-lg">
-          <div className="text-2xl font-bold text-[#dffe00] mb-2">8</div>
-          <div className="text-zinc-400">Main Tasks</div>
+          <div className="text-2xl font-bold text-[#dffe00] mb-2">4</div>
+          <div className="text-zinc-400">Available Tasks</div>
         </motion.div>
         
         <motion.div variants={gridItemVariants} className="text-center p-6 bg-black/30 rounded-lg">
@@ -290,7 +298,8 @@ const JoinPage = () => {
       action: "Post on X",
       actionUrl: "https://twitter.com/intent/tweet?text=Excited%20to%20join%20the%20%40UOMINetwork%20testnet!%20Building%20the%20future%20of%20AI%20agents%20on%20blockchain.%20%23UOMI%20%23AI%20%23Blockchain",
       typology: 'priority',
-      category: "Social"
+      category: "Social",
+      isActive: true
     },
     {
       icon: Coins,
@@ -299,7 +308,8 @@ const JoinPage = () => {
       action: "Get Faucet Tokens",
       actionUrl: "https://app.uomi.ai/faucet",
       typology: 'priority',
-      category: "Essential"
+      category: "Essential",
+      isActive: true
     },
     {
       icon: MessageCircle,
@@ -308,7 +318,8 @@ const JoinPage = () => {
       action: "Join Discord",
       actionUrl: "https://discord.com/invite/RV5DUpjsdY",
       typology: 'priority',
-      category: "Community"
+      category: "Community",
+      isActive: true
     },
     {
       icon: Star,
@@ -316,7 +327,8 @@ const JoinPage = () => {
       description: "Like, retweet, and comment on UOMI's official Twitter posts. Consistent engagement helps you earn the 'Twitter Supporter' role.",
       action: "Follow & Engage",
       actionUrl: "https://x.com/uomiNetwork",
-      category: "Social"
+      category: "Social",
+      isActive: true
     },
     {
       icon: Activity,
@@ -324,7 +336,8 @@ const JoinPage = () => {
       description: "Use our AI agents on a daily basis. Experiment with different features and provide feedback to help us improve the agent experience.",
       action: "Try Agents",
       actionUrl: "https://app.uomi.ai/agents",
-      category: "Testing"
+      category: "Testing",
+      isActive: false
     },
     {
       icon: Users,
@@ -332,7 +345,8 @@ const JoinPage = () => {
       description: "Interact with all UOMI ecosystem partners and their platforms. This includes testing integrations and providing valuable feedback across our network.",
       action: "Explore Partners",
       actionUrl: "https://uomi.ai/ecosystem/",
-      category: "Ecosystem"
+      category: "Ecosystem",
+      isActive: false
     },
     {
       icon: TrendingUp,
@@ -341,7 +355,8 @@ const JoinPage = () => {
       action: "Visit Synthra",
       actionUrl: "https://synthra.org",
       typology: 'partner',
-      category: "DeFi"
+      category: "DeFi",
+      isActive: false
     },
     {
       icon: Zap,
@@ -350,7 +365,8 @@ const JoinPage = () => {
       action: "Visit Simulacra",
       actionUrl: "https://simulacra.bet",
       typology: 'partner',
-      category: "Gaming"
+      category: "Gaming",
+      isActive: false
     },
   ];
 
