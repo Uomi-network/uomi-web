@@ -391,6 +391,7 @@ export default function MinimalTokenomicsPage() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-[#dffe00] text-black font-semibold py-3 px-8 rounded-lg hover:bg-[#dffe00]/90 transition-colors"
+              href="https://app.uomi.ai"
             >
               Get Started
             </motion.button>
@@ -398,6 +399,7 @@ export default function MinimalTokenomicsPage() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="border border-white/30 text-white font-semibold py-3 px-8 rounded-lg hover:bg-white/10 transition-colors"
+              href="https://docs.uomi.ai"
             >
               Learn More
             </motion.button>
