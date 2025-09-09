@@ -816,7 +816,7 @@ useEffect(() => {
             <div className="flex items-center gap-4">
               {/* CTA Button */}
               <motion.a
-                href="/partecipate"
+                href="/participate"
                 className="hidden sm:block bg-[#dffe00] text-black px-5 py-2 rounded-full font-semibold shadow-md"
                 whileHover={{
                   scale: 1.05,
@@ -969,7 +969,7 @@ useEffect(() => {
                 {/* Mobile CTA Button */}
                 <div className="py-4">
                   <motion.a
-                    href="/partecipate"
+                    href="/participate"
                     className="block w-full text-center bg-[#dffe00] text-black py-2.5 rounded-full font-semibold"
                     whileTap={{ scale: 0.95 }}
                   >
