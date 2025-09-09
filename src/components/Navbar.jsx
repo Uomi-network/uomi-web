@@ -937,11 +937,11 @@ useEffect(() => {
                 {/* Mobile CTA Button */}
                 <div className="py-4">
                   <motion.a
-                    href="/chain"
+                    href="/partecipate"
                     className="block w-full text-center bg-[#dffe00] text-black py-2.5 rounded-full font-semibold"
                     whileTap={{ scale: 0.95 }}
                   >
-                    Explore Network
+                    JOIN TESTNET
                   </motion.a>
                 </div>
               </div>

@@ -227,9 +227,9 @@ const TestnetSection = () => (
       <div className="grid md:grid-cols-2 gap-8">
         <motion.div variants={gridItemVariants} className="space-y-4">
           {[
-            { label: "Network Name", value: "UOMI Finney", icon: null },
+            { label: "Network Name", value: "UOMI Turing", icon: null },
             { label: "Chain ID", value: "4386", icon: null },
-            { label: "Default RPC URL", value: "https://finney.uomi.ai", icon: null },
+            { label: "Default RPC URL", value: "https://turing.uomi.ai", icon: null },
             { label: "Block explorer URL", value: "https://explorer.uomi.ai/", icon: null },
             { label: "Currency symbol", value: "UOMI", icon: null },
           ].map((item, index) => (

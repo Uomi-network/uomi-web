@@ -80,9 +80,9 @@ const Hero3 = () => {
               whileHover={{ scale: 1.03, backgroundColor: "#c8e500" }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}
-              onClick={() => window.open("./docs", "_blank")}
+              onClick={() => window.open("./chain", "_blank")}
             >
-              <span>START BUILDING</span>
+              <span>EXPLORE NETWORK</span>
             </motion.button>
 
             <motion.button
