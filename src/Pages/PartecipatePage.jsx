@@ -67,39 +67,6 @@ const Header = () => (
     >
       Participate in our testnet activities and earn your spot in the upcoming airdrop. Complete tasks, engage with the community, and help us build the future of decentralized AI agents.
     </motion.p>
-
-    <motion.div
-      variants={fadeUpVariants}
-      initial="hidden"
-      animate="visible"
-      transition={{ delay: 0.3 }}
-      className="flex items-center justify-center gap-4"
-    >
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="text-white rounded-lg px-6 py-3 flex items-center space-x-2 font-medium"
-        style={{
-          backgroundColor: "#dffe00",
-          color: "#000",
-          boxShadow: "0 4px 10px -1px rgba(223, 254, 0, 0.2)",
-        }}
-        onClick={() => window.open('https://app.uomi.ai', '_blank')}
-      >
-        <Gift size={16} />
-        <span>Start Now</span>
-      </motion.button>
-      
-      <motion.button
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        className="border border-zinc-700 rounded-lg px-6 py-3 flex items-center space-x-2 text-white"
-        onClick={() => window.open('https://discord.com/invite/RV5DUpjsdY', '_blank')}
-      >
-        <MessageCircle size={16} />
-        <span>Join Discord</span>
-      </motion.button>
-    </motion.div>
   </motion.div>
 );
 
@@ -413,7 +380,12 @@ const JoinPage = () => {
               {...task}
             />
           ))}
+
+          
         </motion.div>
+        
+
+        
         
         <motion.div
           variants={staggerContainerVariants}
@@ -422,6 +394,7 @@ const JoinPage = () => {
           viewport={{ once: true }}
           className="bg-zinc-900/50 rounded-lg border border-zinc-800 p-8 backdrop-blur-sm mb-16"
         >
+          
           <motion.h3 variants={gridItemVariants} className="text-2xl font-bold text-white mb-4">
             Important Notes
           </motion.h3>
@@ -441,20 +414,38 @@ const JoinPage = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <motion.button
-            whileHover={{ scale: 1.02, backgroundColor: "#c8e500" }}
-            whileTap={{ scale: 0.98 }}
-            className="text-black rounded-lg px-8 py-4 inline-flex items-center space-x-2 font-medium text-lg"
-            style={{
-              backgroundColor: "#dffe00",
-              boxShadow: "0 4px 20px -1px rgba(223, 254, 0, 0.3)",
-            }}
-            onClick={() => window.open('https://discord.com/invite/RV5DUpjsdY', '_blank')}
-          >
-            <MessageCircle size={20} />
-            <span>Join Our Community</span>
-            <ArrowRight size={20} className="ml-2" />
-          </motion.button>
+          <motion.div
+      variants={fadeUpVariants}
+      initial="hidden"
+      animate="visible"
+      transition={{ delay: 0.3 }}
+      className="flex items-center justify-center gap-4"
+    >
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="text-white rounded-lg px-6 py-3 flex items-center space-x-2 font-medium"
+        style={{
+          backgroundColor: "#dffe00",
+          color: "#000",
+          boxShadow: "0 4px 10px -1px rgba(223, 254, 0, 0.2)",
+        }}
+        onClick={() => window.open('https://app.uomi.ai', '_blank')}
+      >
+        <Gift size={16} />
+        <span>Dashboard</span>
+      </motion.button>
+      
+      <motion.button
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className="border border-zinc-700 rounded-lg px-6 py-3 flex items-center space-x-2 text-white"
+        onClick={() => window.open('https://discord.com/invite/RV5DUpjsdY', '_blank')}
+      >
+        <MessageCircle size={16} />
+        <span>Join Discord</span>
+      </motion.button>
+    </motion.div>
           
           <p className="text-zinc-400 mt-4 text-sm">
             Stay updated with the latest news and connect with other testnet participants
