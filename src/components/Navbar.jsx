@@ -459,15 +459,16 @@ const TGEAnnouncementBar = () => {
                   </span>
 
                   <div className="flex items-center gap-3">
+                    TRADE NOW ON 
                     <a
                       href="https://app.uniswap.org/swap?chain=base&inputCurrency=NATIVE&outputCurrency=0x3628d69aa2d66e9efe95ab1267d440dec24389b6"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm md:text-base font-medium text-[#000] bg-[#dffe00] px-3 py-1 rounded-full hover:opacity-90"
                     >
-                      TRADE NOW ON UNISWAP
+                      UNISWAP
                     </a>
-
+                OR
                     <a
                       href="https://www.mexc.com/exchange/UOMI_USDT"
                       target="_blank"
