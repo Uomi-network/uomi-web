@@ -420,6 +420,14 @@ const TGEAnnouncementBar = () => {
 
   const formatNumber = (num) => num.toString().padStart(2, '0');
 
+  // Consider the TGE passed when now >= tgeDate or all time parts are zero
+  const hasLaunched = new Date() >= tgeDate || (
+    timeLeft.days === 0 &&
+    timeLeft.hours === 0 &&
+    timeLeft.minutes === 0 &&
+    timeLeft.seconds === 0
+  );
+
   return (
     <AnimatePresence>
       <motion.div
@@ -439,58 +447,93 @@ const TGEAnnouncementBar = () => {
           <div className="flex items-center justify-center relative">
             {/* Contenuto centrato */}
             <div className="flex items-center gap-8">
-              {/* Info TGE */}
-              <div className="flex items-center gap-3">
-                <span className="text-white font-medium text-sm">
-                  UOMI TOKEN TGE
-                </span>
-                <div className="w-1 h-1 rounded-full bg-[#c8e500]"></div>
-                <span className="text-[#c8e500] font-mono text-sm">
-                  Sep 10, 2025
-                </span>
-              </div>
+              {hasLaunched ? (
+                // LIVE banner after TGE
+                <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+                  <span className="text-white font-semibold text-sm md:text-base">
+                    UOMI LIVE NOW
+                  </span>
 
-              {/* Countdown - Design minimal */}
-              <div className="flex items-center gap-4">
-                <span className="hidden md:block text-gray-400 text-xs uppercase tracking-wider font-medium">
-                  Launch in
-                </span>
-                <div className="flex items-center gap-3 font-mono text-sm">
-                  <div className="flex items-center gap-1">
-                    <span className="text-white font-medium tabular-nums">
-                      {formatNumber(timeLeft.days)}
-                    </span>
-                    <span className="text-gray-500 text-xs">d</span>
-                  </div>
-                  
-                  <div className="w-px h-3 bg-gray-700"></div>
-                  
-                  <div className="flex items-center gap-1">
-                    <span className="text-white font-medium tabular-nums">
-                      {formatNumber(timeLeft.hours)}
-                    </span>
-                    <span className="text-gray-500 text-xs">h</span>
-                  </div>
-                  
-                  <div className="w-px h-3 bg-gray-700"></div>
-                  
-                  <div className="flex items-center gap-1">
-                    <span className="text-white font-medium tabular-nums">
-                      {formatNumber(timeLeft.minutes)}
-                    </span>
-                    <span className="text-gray-500 text-xs">m</span>
-                  </div>
-                  
-                  <div className="w-px h-3 bg-gray-700"></div>
-                  
-                  <div className="flex items-center gap-1">
-                    <span className="text-[#c8e500] font-medium tabular-nums">
-                      {formatNumber(timeLeft.seconds)}
-                    </span>
-                    <span className="text-gray-500 text-xs">s</span>
+                  <span className="font-mono text-xs md:text-sm text-gray-300">
+                    CA: <span className="text-[#c8e500] break-all">0x3628d69aa2d66e9efe95ab1267d440dec24389b6</span>
+                  </span>
+
+                  <div className="flex items-center gap-3">
+                    <a
+                      href="https://app.uniswap.org/swap?chain=base&inputCurrency=NATIVE&outputCurrency=0x3628d69aa2d66e9efe95ab1267d440dec24389b6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm md:text-base font-medium text-[#000] bg-[#dffe00] px-3 py-1 rounded-full hover:opacity-90"
+                    >
+                      TRADE NOW ON UNISWAP
+                    </a>
+
+                    <a
+                      href="https://www.mexc.com/exchange/UOMI_USDT"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm md:text-base font-medium text-[#000] bg-[#dffe00] px-3 py-1 rounded-full hover:opacity-90"
+                    >
+                      MEXC
+                    </a>
                   </div>
                 </div>
-              </div>
+              ) : (
+                // Countdown - Design minimal
+                <>
+                  {/* Info TGE */}
+                  <div className="flex items-center gap-3">
+                    <span className="text-white font-medium text-sm">
+                      UOMI TOKEN TGE
+                    </span>
+                    <div className="w-1 h-1 rounded-full bg-[#c8e500]"></div>
+                    <span className="text-[#c8e500] font-mono text-sm">
+                      Sep 10, 2025
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <span className="hidden md:block text-gray-400 text-xs uppercase tracking-wider font-medium">
+                      Launch in
+                    </span>
+                    <div className="flex items-center gap-3 font-mono text-sm">
+                      <div className="flex items-center gap-1">
+                        <span className="text-white font-medium tabular-nums">
+                          {formatNumber(timeLeft.days)}
+                        </span>
+                        <span className="text-gray-500 text-xs">d</span>
+                      </div>
+                      
+                      <div className="w-px h-3 bg-gray-700"></div>
+                      
+                      <div className="flex items-center gap-1">
+                        <span className="text-white font-medium tabular-nums">
+                          {formatNumber(timeLeft.hours)}
+                        </span>
+                        <span className="text-gray-500 text-xs">h</span>
+                      </div>
+                      
+                      <div className="w-px h-3 bg-gray-700"></div>
+                      
+                      <div className="flex items-center gap-1">
+                        <span className="text-white font-medium tabular-nums">
+                          {formatNumber(timeLeft.minutes)}
+                        </span>
+                        <span className="text-gray-500 text-xs">m</span>
+                      </div>
+                      
+                      <div className="w-px h-3 bg-gray-700"></div>
+                      
+                      <div className="flex items-center gap-1">
+                        <span className="text-[#c8e500] font-medium tabular-nums">
+                          {formatNumber(timeLeft.seconds)}
+                        </span>
+                        <span className="text-gray-500 text-xs">s</span>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
 
             {/* Pulsante chiudi - più minimal */}
