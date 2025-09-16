@@ -45,6 +45,11 @@ const LogoTrack = ({
             alt: "a16z",
             key: "a16z",
           },
+          {
+            imageUrl: "https://uomi.ai/assets/hacken.png",
+            alt: "Hacken",
+            key: "hacken",
+          }
         ]
       : [
           {
@@ -87,6 +92,11 @@ const LogoTrack = ({
             alt: "Optimism",
             key: "optimism",
           },
+          {
+            imageUrl: "https://uomi.ai/assets/skynet-trading.png",
+            alt: "Skynet Trading",
+            key: "skynet-trading",
+          }
         ];
   
     // Animation for continuous loop
