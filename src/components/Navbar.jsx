@@ -50,6 +50,43 @@ export const AppIcon = () => (
 </svg>
 );
 
+export const OraclesIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Central oracle eye/lens */}
+    <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    <circle cx="12" cy="12" r="2.5" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    
+    {/* Inner pupil/core */}
+    <circle cx="12" cy="12" r="1" fill="currentColor" />
+    
+    {/* Data streams/rays coming from external sources */}
+    <path d="M2 12H6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+    <path d="M18 12H22" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+    <path d="M12 2V6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+    <path d="M12 18V22" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+    
+    {/* Diagonal data feeds */}
+    <path d="M4.93 4.93L7.76 7.76" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.7" />
+    <path d="M16.24 16.24L19.07 19.07" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.7" />
+    <path d="M19.07 4.93L16.24 7.76" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.7" />
+    <path d="M7.76 16.24L4.93 19.07" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.7" />
+    
+    {/* External data nodes */}
+    <circle cx="3" cy="12" r="1" fill="currentColor" />
+    <circle cx="21" cy="12" r="1" fill="currentColor" />
+    <circle cx="12" cy="3" r="1" fill="currentColor" />
+    <circle cx="12" cy="21" r="1" fill="currentColor" />
+    
+    {/* Data processing indicators */}
+    <path d="M9.5 9.5C10 9 10 10 9.5 10.5" stroke="currentColor" strokeWidth="0.75" strokeOpacity="0.5" strokeLinecap="round" />
+    <path d="M14.5 13.5C14 14 14 13 14.5 12.5" stroke="currentColor" strokeWidth="0.75" strokeOpacity="0.5" strokeLinecap="round" />
+    
+    {/* Signal waves */}
+    <path d="M15.5 8.5C16 9 16 10 15.5 10.5" stroke="currentColor" strokeWidth="0.75" strokeOpacity="0.4" strokeLinecap="round" />
+    <path d="M8.5 13.5C9 14 9 15 8.5 15.5" stroke="currentColor" strokeWidth="0.75" strokeOpacity="0.4" strokeLinecap="round" />
+  </svg>
+);
+
 export const ManifestoIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* Main scroll/document */}
@@ -351,6 +388,7 @@ const menuItems = {
             label: "Deterministic indeterminism",
             link: "/deterministc-indeterminism",
           },
+          { icon: <OraclesIcon />, label: "TEE Oracles", link: "https://github.com/Uomi-network/uomi-whitepaper/blob/main/MORPHEUS.pdf" },
         ],
       },
       {
