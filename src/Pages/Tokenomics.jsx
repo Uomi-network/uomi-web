@@ -70,8 +70,12 @@ const AnimatedCounter = ({ value, suffix = "" }) => {
     
     return () => clearInterval(timer);
   }, [value]);
-  
-  return <span>{Math.floor(count).toLocaleString()}{suffix}</span>;
+
+  return (
+    <span>
+      {count.toFixed(2)}{suffix}
+    </span>
+  );
 };
 
 export default function MinimalTokenomicsPage() {
