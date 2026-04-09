@@ -304,7 +304,7 @@ const JoinPage = () => {
       action: "Try Agents",
       actionUrl: "https://app.uomi.ai/agents",
       category: "Testing",
-      isActive: false
+      isActive: true
     },
     {
       icon: Users,
@@ -313,17 +313,17 @@ const JoinPage = () => {
       action: "Explore Partners",
       actionUrl: "https://uomi.ai/ecosystem/",
       category: "Ecosystem",
-      isActive: false
+      isActive: true
     },
     {
       icon: TrendingUp,
       title: "Swap Testnet Tokens on Synthra",
       description: "Test DEX integration by swapping tokens on synthra.org.",
       action: "Visit Synthra",
-      actionUrl: "https://synthra.org",
+      actionUrl: "https://app.synthra.org",
       typology: 'partner',
       category: "DeFi",
-      isActive: false
+      isActive: true
     },
     {
       icon: Zap,
@@ -333,7 +333,7 @@ const JoinPage = () => {
       actionUrl: "https://simulacra.bet",
       typology: 'partner',
       category: "Gaming",
-      isActive: false
+      isActive: true
     },
   ];
 
