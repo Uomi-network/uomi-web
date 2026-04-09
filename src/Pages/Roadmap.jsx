@@ -87,14 +87,14 @@ const OpocRoadmap = () => {
       subtitle: "(testnet)",
       focus: "TEE Oracles - Unleash AI agents in Web2",
       description: "The Turing β Testnet introduces TEE Web2 Oracles, enabling AI Agents to access Web2 data and subscriptions with minimized trust assumptions and latency. A TSS-enabled bridge with relayers will be deployed to allow for trustless bridging of blockchain assets between the UOMI Network and other Blockchains. A Finite State Automata system, for autonomous transaction triggering.  Agents issuance and inference fee burn will be enabled with testnet tokens.",
-      date: "Q3 - 2025"
+      date: "Q1 - 2026"
     },
     {
       title: "UOMI",
       subtitle: "Mainnet",
       focus: "Decentralized Governance and Bridges",
       description: "After thorough testing with the Turing Testnet, the OPoC algorithm will be implemented on the mainnet, enabling AI Agents to securely control valuable digital assets. The mainnet launch includes the creation of the UOMI DAO and a decentralized bridge between Ethereum and UOMI to enable staking with the pre-minted supply for nodes operators, indirect stakers, and VeUOMI holders.",
-      date: "Q4 - 2025"
+      date: "Q2 - 2026"
     }
   ];
   

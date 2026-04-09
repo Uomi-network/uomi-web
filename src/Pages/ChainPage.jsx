@@ -333,25 +333,34 @@ const TestnetCard = ({ testnet, isCurrent = false }) => {
 const ChainPage = () => {
   const testnets = [
     {
-      name: 'UOMI Turing',
+      name: 'UOMI Turing α',
       status: 'current',
       explorerUrl: 'https://explorer.uomi.ai/',
       statsApiUrl: 'https://explorer.uomi.ai/api/v2/stats',
       stats: {
-        addresses: 45623,
-        transactions: 1234567,
-        blocks: 456789,
+        addresses: 0,
+        transactions: 0,
+        blocks: 0,
+      },
+    },
+    {
+      name: 'UOMI Turing',
+      status: 'deactivated',
+      explorerUrl: null,
+      stats: {
+        addresses: 2530,
+        transactions: 61237,
+        blocks: 2806893,
       },
     },
     {
       name: 'UOMI Finney',
-      status: 'deprecated', // 'deprecated',
-      explorerUrl: 'https://explorer-finney.uomi.ai/',
-      statsApiUrl: 'https://explorer-finney.uomi.ai/api/v2/stats',
+      status: 'deactivated', // 'deprecated',
+      explorerUrl: null,
       stats: {
-        addresses: 283600, // snapshot from explorer 02/09/25
-        transactions: 10000000, // snapshot from explorer 02/09/25
-        blocks: 6000000, // snapshot from explorer 02/09/25
+        addresses: 288990, // snapshot from explorer 03/02/26
+        transactions: 13251038, // snapshot from explorer 03/02/26
+        blocks: 10042276, // snapshot from explorer 03/02/26
       },
     },
     {
