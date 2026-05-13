@@ -506,15 +506,6 @@ const TGEAnnouncementBar = () => {
                     >
                       UNISWAP
                     </a>
-                OR
-                    <a
-                      href="https://www.mexc.com/exchange/UOMI_USDT"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm md:text-base font-medium text-[#000] bg-[#dffe00] px-3 py-1 rounded-full hover:opacity-90"
-                    >
-                      MEXC
-                    </a>
                   </div>
                 </div>
               ) : (
