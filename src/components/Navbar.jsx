@@ -386,7 +386,7 @@ const menuItems = {
           {
             icon: <DeterminismIcon />,
             label: "Deterministic indeterminism",
-            link: "/deterministc-indeterminism",
+            link: "/deterministic-indeterminism",
           },
           { icon: <OraclesIcon />, label: "TEE Oracles", link: "https://github.com/Uomi-network/uomi-whitepaper/blob/main/MORPHEUS.pdf" },
         ],

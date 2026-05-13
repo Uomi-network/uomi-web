@@ -8,7 +8,7 @@ export default function Index() {
   return (
     <>
       <PageContainer>
-        <PageLatex latex='/latex/deterministic-indeterminism.tex' />
+        <PageLatex latex='/latex/deterministic-indeterminism.tex' date='2025, 3, 1' />
         <PageDownload url='https://github.com/Uomi-network/uomi-whitepaper/blob/main/Deterministic-Indeterminism.pdf' label='Download PDF' />
       </PageContainer>
     </>

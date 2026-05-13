@@ -1197,7 +1197,7 @@ export default function OpocExplainer() {
       </button>
       <button 
         className="rounded-full bg-gradient-to-r from-[#c8e500] to-[#a9c000] px-6 py-3 sm:px-8 sm:py-4 text-black font-bold text-base sm:text-lg whitespace-nowrap"
-        onClick={() => window.location.href = "https://uomi.ai/deterministc-indeterminism"}
+        onClick={() => window.location.href = "https://uomi.ai/deterministic-indeterminism"}
       >
         Deterministic Undeterminism Paper
       </button>

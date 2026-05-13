@@ -14,7 +14,7 @@ import OPoCPresentation from "./Pages/Opoc";
 import Docs from "./Pages/DocsPage";
 import Blog from './Pages/Blog';
 import BlogPost from './Pages/BlogPost';
-import Determinism from './Pages/Deterministc-indeterminism';
+import Determinism from './Pages/deterministic-indeterminism';
 import Roadmap from './Pages/Roadmap';
 import Grants from './Pages/Grants';
 import Applications from './Pages/Applications';
@@ -48,7 +48,7 @@ function App() {
         <Route path="/docs" element={<Docs />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:postId" element={<BlogPost />} />
-        <Route path="/deterministc-indeterminism" element={<Determinism />} />
+        <Route path="/deterministic-indeterminism" element={<Determinism />} />
         <Route path="/roadmap" element={<Roadmap />} />
         <Route path="/grants" element={<Grants />} />
         <Route path="/applications" element={<Applications />} />
