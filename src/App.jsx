@@ -14,7 +14,7 @@ import OPoCPresentation from "./Pages/Opoc";
 import Docs from "./Pages/DocsPage";
 import Blog from './Pages/Blog';
 import BlogPost from './Pages/BlogPost';
-import Determinism from './Pages/deterministic-indeterminism';
+import Determinism from './Pages/Deterministic-indeterminism';
 import Roadmap from './Pages/Roadmap';
 import Grants from './Pages/Grants';
 import Applications from './Pages/Applications';
