@@ -1,12 +1,5 @@
-'use client'
-
-import Determinism from "../../src/Pages/Deterministic-indeterminism";
-import AppWrapper from "../../src/components/AppWrapper";
+import { redirect } from 'next/navigation';
 
 export default function Page() {
-  return (
-    <AppWrapper>
-      <Determinism />
-    </AppWrapper>
-  );
+  redirect('/deterministic-indeterminism');
 }
