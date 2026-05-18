@@ -335,11 +335,17 @@ const menuItems = {
       {
         title: "Explore",
         items: [
+          { icon: <ChainIcon />, label: "How the L1 works", link: "/layer1" },
           { icon: <AppIcon />, label: "Apps & Infrastructure", link: "/ecosystem" },
           {
             icon: <AIAgentIcon />,
             label: "Agents",
             link: "https://app.uomi.ai/agents",
+          },
+          {
+            icon: <BrainIcon />,
+            label: "Inference Network",
+            link: "/inference-network",
           },
         ],
       },
@@ -366,6 +372,12 @@ const menuItems = {
   },
   Developers: {
     sections: [
+      {
+        title: "GPU Providers",
+        items: [
+          { icon: <TokenomicsIcon />, label: "GPU Earnings", link: "/gpu-earnings" },
+        ],
+      },
       {
         title: "Developer Resources",
         items: [
@@ -805,7 +817,7 @@ useEffect(() => {
                             </div>
                           </div>
                         ) : (
-                          <div className="p-6 flex flex-row gap-12 min-w-[200px]">
+                          <div className={`p-6 flex flex-row gap-12 ${menuName === "Developers" ? "min-w-[480px]" : "min-w-[200px]"}`}>
                             {menuItems[menuName].sections.map(
                               (section, idx) => (
                                 <div key={idx} className="space-y-3">

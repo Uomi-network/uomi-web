@@ -64,7 +64,7 @@ const Hero3 = () => {
             className="text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto px-2"
             variants={itemVariants}
           >
-            UOMI is the first Layer 1 built for secure AI computation and unstoppable agents that think, act, trade, and evolve, without human input.
+            A <strong className="text-white">Layer 1</strong> for autonomous AI agents, and a <strong className="text-white">distributed inference network</strong> for frontier open-source models. Both run on UOMI. Both are verifiable on-chain.
           </motion.p>
 
           <motion.div
@@ -80,12 +80,12 @@ const Hero3 = () => {
               whileHover={{ scale: 1.03, backgroundColor: "#c8e500" }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}
-              onClick={() => window.open("./chain", "_blank")}
+              href="/layer1"
             >
-              <span>EXPLORE NETWORK</span>
+              <span>Layer 1 →</span>
             </motion.a>
 
-            <motion.button
+            <motion.a
               className="px-6 sm:px-8 py-3 sm:py-3.5 rounded font-bold border border-zinc-700 hover:border-zinc-600 bg-zinc-900/60 backdrop-blur-md shadow-md text-sm sm:text-base w-full sm:w-auto mt-3 sm:mt-0 hover:cursor-pointer"
               whileHover={{
                 scale: 1.03,
@@ -94,10 +94,10 @@ const Hero3 = () => {
               }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}
-               onClick={() => window.open("https://discord.gg/4ySAfR73VM", "_blank")}
+              href="/inference-network"
             >
-              <span>JOIN THE COMMUNITY</span>
-            </motion.button>
+              <span>Inference Network →</span>
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>
