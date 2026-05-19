@@ -282,7 +282,7 @@ export default function InferenceNetworkPage() {
 
             <div className="mt-8 flex justify-center">
               <a href="/gpu-earnings/" className="rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white/80 transition-colors hover:border-[#dffe00] hover:text-[#dffe00]">
-                earning by models →
+                Earnings by models →
               </a>
             </div>
           </div>
