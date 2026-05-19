@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 
 import { ChevronDown, Menu, X, Calendar  } from "lucide-react"
@@ -588,6 +589,9 @@ const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showComingSoon, setShowComingSoon] = useState(false);
+  const pathname = usePathname();
+  const normalizedPath = pathname === "/" ? "/" : pathname?.replace(/\/$/, "");
+  const hideHeaderCta = ["/", "/inference-network", "/gpu-earnings", "/gpu-providers"].includes(normalizedPath);
 
   // Helper function to detect external links
   const isExternalLink = (url) => {
@@ -887,17 +891,19 @@ const Navbar = () => {
             {/* Right Side Controls */}
             <div className="flex items-center gap-4">
               {/* CTA Button */}
-              <motion.a
-                href="/gpu-providers/"
-                className="hidden sm:block bg-[#dffe00] text-black px-5 py-2 rounded-full font-semibold shadow-md"
-                whileHover={{
-                  scale: 1.05,
-                  backgroundColor: "#c8e500",
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Join testnet
-              </motion.a>
+              {!hideHeaderCta && (
+                <motion.a
+                  href="/gpu-providers/"
+                  className="hidden sm:block bg-[#dffe00] text-black px-5 py-2 rounded-full font-semibold shadow-md"
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "#c8e500",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Join testnet
+                </motion.a>
+              )}
 
               {/* Mobile Menu Button */}
               <button
@@ -1045,15 +1051,17 @@ const Navbar = () => {
                 ))}
 
                 {/* Mobile CTA Button */}
-                <div className="py-4">
-                  <motion.a
-                    href="/gpu-providers/"
-                    className="block w-full text-center bg-[#dffe00] text-black py-2.5 rounded-full font-semibold"
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Join testnet
-                  </motion.a>
-                </div>
+                {!hideHeaderCta && (
+                  <div className="py-4">
+                    <motion.a
+                      href="/gpu-providers/"
+                      className="block w-full text-center bg-[#dffe00] text-black py-2.5 rounded-full font-semibold"
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Join testnet
+                    </motion.a>
+                  </div>
+                )}
               </div>
             </motion.div>
           )}

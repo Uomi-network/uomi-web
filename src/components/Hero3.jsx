@@ -64,7 +64,7 @@ const Hero3 = () => {
             className="text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto px-2"
             variants={itemVariants}
           >
-            A <strong className="text-white">Layer 1</strong> for autonomous AI agents, and a <strong className="text-white">distributed inference network</strong> for frontier open-source models. Both run on UOMI. Both are verifiable on-chain.
+            A <strong className="text-white">Layer 1</strong> for autonomous AI agents, and a <strong className="text-white">Distributed Inference Network</strong> for frontier open-source models. Both run on UOMI. Both are verifiable on-chain.
           </motion.p>
 
           <motion.div
@@ -82,7 +82,7 @@ const Hero3 = () => {
               transition={{ duration: 0.2 }}
               href="/inference-network"
             >
-              <span>inference network</span>
+              <span>Inference Network</span>
             </motion.a>
 
             <motion.a

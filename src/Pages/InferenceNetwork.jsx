@@ -302,7 +302,7 @@ export default function InferenceNetworkPage() {
                   <a href="/gpu-providers/" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
                     Start Inferencing
                   </a>
-                  <a href="https://docs.uomi.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
+                  <a href="/gpu-providers/" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
                     Read the docs →
                   </a>
                 </div>

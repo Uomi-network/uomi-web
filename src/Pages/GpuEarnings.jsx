@@ -177,7 +177,7 @@ export default function GpuEarningsPage() {
                 <a href="/gpu-providers/" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
                   Run a node →
                 </a>
-                <a href="/tokenomics" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
+                <a href="/gpu-providers/" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
                   How the split works
                 </a>
               </div>
