@@ -27,10 +27,10 @@ const NetworkSVG = () => (
       <image href="/UOMI.svg" x="306" y="168" width="88" height="24" preserveAspectRatio="xMidYMid meet" />
     </g>
     <g fontFamily="monospace" fontSize="10" fill="#888">
-      <g transform="translate(80,70)"><rect width="140" height="44" rx="10" fill="#111" stroke="rgba(255,255,255,.1)" /><circle cx="14" cy="22" r="5" fill="#dffe00" /><text x="28" y="20" fontFamily="sans-serif" fontSize="11" fontWeight="600" fill="#fff">RTX 4090</text><text x="28" y="34" fill="#888">paris-07</text></g>
-      <g transform="translate(500,52)"><rect width="140" height="44" rx="10" fill="#111" stroke="rgba(255,255,255,.1)" /><circle cx="14" cy="22" r="5" fill="#a3c400" /><text x="28" y="20" fontFamily="sans-serif" fontSize="11" fontWeight="600" fill="#fff">RTX PRO 6000</text><text x="28" y="34" fill="#888">tokyo-12</text></g>
-      <g transform="translate(40,250)"><rect width="140" height="44" rx="10" fill="#111" stroke="rgba(255,255,255,.1)" /><circle cx="14" cy="22" r="5" fill="#a3c400" /><text x="28" y="20" fontFamily="sans-serif" fontSize="11" fontWeight="600" fill="#fff">RTX 5090</text><text x="28" y="34" fill="#888">berlin-21</text></g>
-      <g transform="translate(530,260)"><rect width="140" height="44" rx="10" fill="#111" stroke="rgba(255,255,255,.1)" /><circle cx="14" cy="22" r="5" fill="#dffe00" /><text x="28" y="20" fontFamily="sans-serif" fontSize="11" fontWeight="600" fill="#fff">2× RTX 4090</text><text x="28" y="34" fill="#888">austin-03</text></g>
+      <g transform="translate(80,70)"><rect width="140" height="34" rx="10" fill="#111" stroke="rgba(255,255,255,.1)" /><circle cx="14" cy="17" r="5" fill="#dffe00" /><text x="28" y="21" fontFamily="sans-serif" fontSize="11" fontWeight="600" fill="#fff">OPoC</text></g>
+      <g transform="translate(500,52)"><rect width="140" height="34" rx="10" fill="#111" stroke="rgba(255,255,255,.1)" /><circle cx="14" cy="17" r="5" fill="#a3c400" /><text x="28" y="21" fontFamily="sans-serif" fontSize="11" fontWeight="600" fill="#fff">AI Agent</text></g>
+      <g transform="translate(40,250)"><rect width="140" height="34" rx="10" fill="#111" stroke="rgba(255,255,255,.1)" /><circle cx="14" cy="17" r="5" fill="#a3c400" /><text x="28" y="21" fontFamily="sans-serif" fontSize="11" fontWeight="600" fill="#fff">TSS</text></g>
+      <g transform="translate(530,260)"><rect width="140" height="34" rx="10" fill="#111" stroke="rgba(255,255,255,.1)" /><circle cx="14" cy="17" r="5" fill="#dffe00" /><text x="28" y="21" fontFamily="sans-serif" fontSize="11" fontWeight="600" fill="#fff">TEE Oracle</text></g>
     </g>
   </svg>
 );
