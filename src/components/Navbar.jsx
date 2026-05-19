@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -589,6 +589,7 @@ const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showComingSoon, setShowComingSoon] = useState(false);
+  const navRef = useRef(null);
   const pathname = usePathname();
   const normalizedPath = pathname === "/" ? "/" : pathname?.replace(/\/$/, "");
   const hideHeaderCta = ["/", "/inference-network", "/gpu-earnings", "/gpu-providers"].includes(normalizedPath);
@@ -597,6 +598,17 @@ const Navbar = () => {
   const isExternalLink = (url) => {
     return url && (url.startsWith('http://') || url.startsWith('https://'));
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setActiveMenu(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // Initialize dark mode from system preference
   useEffect(() => {
@@ -658,7 +670,7 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav ref={navRef} className="hidden md:flex items-center space-x-8">
               {Object.keys(menuItems).map((menuName) => (
                 <div className="relative" key={menuName}>
                   <button
