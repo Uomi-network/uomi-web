@@ -65,7 +65,7 @@ export default function InferenceNetworkPage() {
                 <strong className="text-white">Permissionless, verifiable, paid per token.</strong>
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-10">
-                <a href="https://app.uomi.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
+                <a href="/gpu-providers/" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
                   Start Inferencing
                 </a>
                 <a href="/gpu-providers/" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
