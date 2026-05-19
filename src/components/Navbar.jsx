@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 
 
@@ -333,7 +333,7 @@ const menuItems = {
   Ecosystem: {
     sections: [
       {
-        title: "Explore",
+        title: "Layer 1",
         items: [
           { icon: <ChainIcon />, label: "How the L1 works", link: "/layer1" },
           { icon: <AppIcon />, label: "Apps & Infrastructure", link: "/ecosystem" },
@@ -342,27 +342,15 @@ const menuItems = {
             label: "Agents",
             link: "https://app.uomi.ai/agents",
           },
-          {
-            icon: <BrainIcon />,
-            label: "Inference Network",
-            link: "/inference-network",
-          },
         ],
       },
       {
-        title: "Builder Programs",
+        title: "inference Network",
         items: [
           {
-            label: "evm/accathon",
-            description: "The premier hackathon for innovative EVM developers.",
-            link: "#",
-            comingSoon: true
-          },
-          {
-            label: "UOMI Grants",
-            description:
-              "Pitch your startup to win cash prizes, VC funding and marketing.",
-            link: "/grants",
+            label: "How the network works",
+            description: "Explore UOMI's distributed inference network.",
+            link: "/inference-network",
           },
         ],
       },
@@ -373,13 +361,14 @@ const menuItems = {
   Developers: {
     sections: [
       {
-        title: "GPU Providers",
+        title: "inference network",
         items: [
           { icon: <TokenomicsIcon />, label: "GPU Earnings", link: "/gpu-earnings" },
+          { icon: <BrainIcon />, label: "GPU Providers", link: "/gpu-providers" },
         ],
       },
       {
-        title: "Developer Resources",
+        title: "L1 Developer Resources",
         items: [
           { icon: <PortalIcon />, label: "Developer Portal", link: "/docs" },
           { icon: <DocumentIcon />, label: "Documentation", link: "https://docs.uomi.ai" },
@@ -598,6 +587,7 @@ const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [activeMenu, setActiveMenu] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showComingSoon, setShowComingSoon] = useState(false);
 
   // Helper function to detect external links
   const isExternalLink = (url) => {
@@ -609,25 +599,17 @@ const Navbar = () => {
     setIsDarkMode(true); // Default to dark mode
   }, []);
 
-  // Click outside handler to close menus
- const dropdownRef = useRef(null);
-
-useEffect(() => {
-  const handleClickOutside = (e) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-      setActiveMenu(null);
-    }
-  };
-
-  document.addEventListener("mousedown", handleClickOutside);
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside);
-  };
-}, []);
   // Handle dropdown click
   const handleDropdownClick = (e, menuName) => {
     e.stopPropagation();
     setActiveMenu(activeMenu === menuName ? null : menuName);
+  };
+
+  const handleMenuItemClick = (e, item) => {
+    if (!item.comingSoon) return;
+    e.preventDefault();
+    e.stopPropagation();
+    setShowComingSoon(true);
   };
 
   // Toggle dark mode
@@ -695,7 +677,6 @@ useEffect(() => {
                   <AnimatePresence>
                     {activeMenu === menuName && (
                       <motion.div
-                        ref={dropdownRef}
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 8 }}
@@ -837,6 +818,7 @@ useEffect(() => {
                                         >
                                           <a
                                             href={item.link}
+                                            onClick={(e) => handleMenuItemClick(e, item)}
                                             className="flex items-start gap-2.5"
                                             {...(isExternalLink(item.link) && { 
                                               target: '_blank', 
@@ -856,6 +838,11 @@ useEffect(() => {
                                             >
                                               {item.label}
                                             </span>
+                                            {item.comingSoon && (
+                                              <span className="text-xs bg-zinc-700 text-[#dffe00] px-2 py-0.5 rounded-full">
+                                                coming soon
+                                              </span>
+                                            )}
                                           </a>
                                         </motion.li>
                                       ))}
@@ -976,6 +963,7 @@ useEffect(() => {
                                     <li key={i} className="py-1">
                                       <a
                                         href={item.link}
+                                        onClick={(e) => handleMenuItemClick(e, item)}
                                         className="flex gap-2.5 items-start hover:text-[#dffe00]"
                                         {...(isExternalLink(item.link) && { 
                                           target: '_blank', 
@@ -999,6 +987,11 @@ useEffect(() => {
                                             >
                                               {item.description}
                                             </p>
+                                          )}
+                                          {item.comingSoon && (
+                                            <span className="mt-1 inline-block text-xs bg-zinc-700 text-[#dffe00] px-2 py-0.5 rounded-full">
+                                              coming soon
+                                            </span>
                                           )}
                                         </div>
                                       </a>
@@ -1066,6 +1059,36 @@ useEffect(() => {
           )}
         </AnimatePresence>
       </header>
+      <AnimatePresence>
+        {showComingSoon && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowComingSoon(false)}
+          >
+            <motion.div
+              className="w-full max-w-sm rounded-xl border border-zinc-700 bg-zinc-900 p-6 text-center shadow-2xl"
+              initial={{ scale: 0.96, y: 10 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.96, y: 10 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#dffe00]">
+                coming soon
+              </p>
+              <button
+                type="button"
+                onClick={() => setShowComingSoon(false)}
+                className="mt-5 rounded-full bg-[#dffe00] px-5 py-2 text-sm font-semibold text-black transition-colors hover:bg-[#c8e500]"
+              >
+                Close
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

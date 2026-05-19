@@ -55,9 +55,9 @@ const Hero3 = () => {
           >
             <span style={{ color: "#dffe00" }}>UOMI</span>
             <br />
-            <span className="text-white">WHERE AI MEETS</span>
+            <span className="text-white">DISTRIBUTED</span>
             <br />
-            <span className="text-white">DECENTRALIZATION</span>
+            <span className="text-white">INFERENCE NETWORK</span>
           </motion.h1>
 
           <motion.p
@@ -72,7 +72,7 @@ const Hero3 = () => {
             variants={itemVariants}
           >
             <motion.a
-              className="text-black px-6 sm:px-8 py-3 sm:py-3.5 rounded font-bold shadow-xl text-sm sm:text-base w-full sm:w-auto hover:cursor-pointer"
+              className="text-black px-6 sm:px-8 py-3 sm:py-3.5 rounded font-bold shadow-xl text-sm sm:text-base w-full sm:w-60 text-center hover:cursor-pointer"
               style={{
                 backgroundColor: "#dffe00",
                 boxShadow: "0 8px 16px -4px rgba(223, 254, 0, 0.4)",
@@ -80,13 +80,13 @@ const Hero3 = () => {
               whileHover={{ scale: 1.03, backgroundColor: "#c8e500" }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}
-              href="/layer1"
+              href="/inference-network"
             >
-              <span>Layer 1 →</span>
+              <span>inference network</span>
             </motion.a>
 
             <motion.a
-              className="px-6 sm:px-8 py-3 sm:py-3.5 rounded font-bold border border-zinc-700 hover:border-zinc-600 bg-zinc-900/60 backdrop-blur-md shadow-md text-sm sm:text-base w-full sm:w-auto mt-3 sm:mt-0 hover:cursor-pointer"
+              className="px-6 sm:px-8 py-3 sm:py-3.5 rounded font-bold border border-zinc-700 hover:border-zinc-600 bg-zinc-900/60 backdrop-blur-md shadow-md text-sm sm:text-base w-full sm:w-60 text-center mt-3 sm:mt-0 hover:cursor-pointer"
               whileHover={{
                 scale: 1.03,
                 borderColor: "#dffe00",
@@ -94,9 +94,9 @@ const Hero3 = () => {
               }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}
-              href="/inference-network"
+              href="/layer1"
             >
-              <span>Inference Network →</span>
+              <span>UOMI Blockchain</span>
             </motion.a>
           </motion.div>
         </motion.div>

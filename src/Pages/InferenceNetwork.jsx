@@ -24,13 +24,13 @@ const NetworkSVG = () => (
         <stop offset="0" stopColor="#dffe00" /><stop offset="1" stopColor="#a3c400" />
       </linearGradient>
     </defs>
-    <ellipse cx="350" cy="180" rx="320" ry="120" fill="none" stroke="rgba(255,255,255,.08)" strokeDasharray="3 6" />
-    <ellipse cx="350" cy="180" rx="220" ry="78" fill="none" stroke="rgba(255,255,255,.12)" strokeDasharray="3 6" />
+    <ellipse cx="350" cy="180" rx="320" ry="120" fill="none" stroke="rgba(255,255,255,.28)" strokeWidth="2" strokeDasharray="6 8" />
+    <ellipse cx="350" cy="180" rx="265" ry="98" fill="none" stroke="rgba(223,254,0,.22)" strokeWidth="1.8" strokeDasharray="5 8" />
+    <ellipse cx="350" cy="180" rx="220" ry="78" fill="none" stroke="rgba(255,255,255,.34)" strokeWidth="2" strokeDasharray="6 8" />
     <g>
       <circle cx="350" cy="180" r="58" fill="url(#orb)" />
       <circle cx="350" cy="180" r="58" fill="none" stroke="rgba(255,255,255,.15)" />
-      <text x="350" y="178" textAnchor="middle" fontFamily="serif" fontSize="22" fill="#000">UOMI</text>
-      <text x="350" y="198" textAnchor="middle" fontFamily="monospace" fontSize="9" fill="rgba(0,0,0,.65)" letterSpacing="2">NETWORK</text>
+      <image href="/UOMI.svg" x="306" y="168" width="88" height="24" preserveAspectRatio="xMidYMid meet" />
     </g>
     <g fontFamily="monospace" fontSize="10" fill="#888">
       <g transform="translate(80,70)"><rect width="140" height="44" rx="10" fill="#111" stroke="rgba(255,255,255,.1)" /><circle cx="14" cy="22" r="5" fill="#dffe00" /><text x="28" y="20" fontFamily="sans-serif" fontSize="11" fontWeight="600" fill="#fff">RTX 4090</text><text x="28" y="34" fill="#888">paris-07</text></g>
@@ -66,7 +66,7 @@ export default function InferenceNetworkPage() {
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-10">
                 <a href="https://app.uomi.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
-                  Get an API key
+                  Start Inferencing
                 </a>
                 <a href="/participate" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
                   Earn from your GPU
@@ -86,13 +86,13 @@ export default function InferenceNetworkPage() {
                 100% buy pressure. <span className="italic text-[#dffe00]">Then split.</span>
               </h2>
               <p className="mt-4 text-white/60 max-w-3xl mx-auto text-lg">
-                Every dollar of inference revenue market-buys $UOMI on-chain. The bought tokens then split: 80% to the GPU that served the request, 20% to the burn address. No treasury cut. No emissions. No vesting cliffs.
+                Every dollar of inference revenue market-buys $UOMI on-chain. The bought tokens then split: 80% to the GPU that served the request, 20% to the burn address. No emissions. No vesting cliffs.
               </p>
             </motion.div>
 
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-3 gap-6">
               {[
-                { step: '01 · Buy-back', pct: '100%', copy: 'Of every dollar paid by OpenRouter (or any UOMI customer) is used to market-buy $UOMI on-chain. No cut to a treasury — all revenue becomes buy pressure on the token.' },
+                { step: '01 · Buy-back', pct: '100%', copy: 'Every dollar spent by autonomous AI agents — Open Claw, Hermes, UOMI Agents — and aggregators like OpenRouter is used to market-buy $UOMI on-chain. No treasury cut. All revenue becomes buy pressure on the token.' },
                 { step: '02 · To GPU provider', pct: '80%', copy: 'Of the $UOMI just bought lands directly in the wallet of the GPU that served the request. Paid in $UOMI, on-chain, instantly.' },
                 { step: '03 · To burn', pct: '20%', copy: 'Of the $UOMI just bought is sent to the burn address. Permanent supply reduction, every burn tx is publicly verifiable on-chain.' },
               ].map((c, i) => (
@@ -171,13 +171,18 @@ export default function InferenceNetworkPage() {
                 {[
                   { n: '01', title: 'The worker commits to an output.', desc: 'When a node serves a request, it returns the generated tokens with the top-k log-probabilities the model assigned to those tokens. This is the inference\'s fingerprint.' },
                   { n: '02', title: 'Validators re-score against the same model.', desc: 'A second node runs the worker\'s claimed input and output through the same model architecture and recomputes the log-probabilities. Re-scoring an existing answer is reproducible.' },
-                  { n: '03', title: 'The check is tolerant by design.', desc: 'Two honest GPUs produce log-probs that differ by a tiny floating-point delta. The protocol accepts that delta. A worker running a smaller model or no model at all diverges far beyond it, and is rejected.' },
-                  { n: '04', title: 'Optimistic sampling keeps verification cheap.', desc: 'The network doesn\'t re-validate every inference. Validators are sampled randomly, so cheaters never know which call gets checked. Combined with slashing, the expected cost of cheating exceeds any gain.' },
+                  { n: '03', title: 'The check is tolerant by design.', desc: 'Two honest GPUs produce log-probs that differ by a tiny floating-point delta. The protocol accepts that delta. A worker running a smaller model or no model at all diverges far beyond it, and is rejected.', linkLabel: 'Learn more about Deterministic Indeterminism', link: '/deterministic-indeterminism' },
+                  { n: '04', title: 'Optimistic sampling keeps verification cheap.', desc: 'The network doesn\'t re-validate every inference. Validators are sampled randomly, so cheaters never know which call gets checked. Combined with slashing, the expected cost of cheating exceeds any gain.', linkLabel: 'Learn more about OPoC', link: '/opoc' },
                 ].map((p, i) => (
                   <motion.div key={i} variants={item} className="bg-white/[0.03] border border-white/5 rounded-xl p-6">
-                    <span className="inline-block w-8 h-8 rounded-full bg-[#dffe00]/10 text-[#dffe00] text-sm font-bold flex items-center justify-center mb-3">{p.n}</span>
+                    <span className="inline-flex w-10 h-10 rounded-full bg-[#dffe00]/10 text-[#dffe00] text-sm font-bold items-center justify-center leading-none tabular-nums mb-3">{p.n}</span>
                     <h4 className="text-lg font-bold mb-2">{p.title}</h4>
                     <p className="text-white/60 text-sm leading-relaxed">{p.desc}</p>
+                    {p.link && (
+                      <a href={p.link} className="mt-4 inline-block text-sm font-semibold text-[#dffe00] hover:text-[#c8e500] transition-colors">
+                        {p.linkLabel}
+                      </a>
+                    )}
                   </motion.div>
                 ))}
               </motion.div>
@@ -225,7 +230,7 @@ export default function InferenceNetworkPage() {
               {[
                 { tag: 'For developers', title: 'Frontier OSS, OpenAI-compatible.', desc: 'Swap one base URL and you\'re done. Stream, function-call, JSON mode. Pay per token, in dollars or $UOMI.' },
                 { tag: 'For GPU providers', title: 'Turn idle silicon into yield.', desc: 'RTX 4090 or better. One-line installer. The moment a request hits your node, 80% lands in your wallet.' },
-                { tag: 'For $UOMI holders', title: 'Usage funds the buyback.', desc: 'No emissions Ponzi. Every served token converts external revenue into $UOMI buy pressure, visible on-chain, hourly.' },
+                { tag: 'For $UOMI holders', title: 'Usage funds the buyback.', desc: 'The Scarcity Engine. Every served token converts external revenue into $UOMI buy pressure, visible on-chain, hourly.' },
               ].map((c, i) => (
                 <motion.div key={i} variants={item} className="border border-white/10 rounded-xl p-6 hover:border-[#dffe00]/30 transition-colors">
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-[#dffe00] mb-4">
@@ -251,7 +256,7 @@ export default function InferenceNetworkPage() {
               <p className="mt-4 text-white/60 max-w-2xl mx-auto text-lg">No cold starts, no model-loading tax. The biggest open-source models stay hot across the GPU mesh.</p>
             </motion.div>
 
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid overflow-hidden rounded-2xl border border-white/15 bg-[#1b1816] md:grid-cols-3">
               {[
                 { vendor: 'meta', name: 'Llama 3.3 70B', price: '$0.34', ctx: '128k ctx' },
                 { vendor: 'deepseek', name: 'DeepSeek V3', price: '$0.28', ctx: '64k ctx' },
@@ -260,16 +265,26 @@ export default function InferenceNetworkPage() {
                 { vendor: 'google', name: 'Gemma 2 27B', price: '$0.16', ctx: '8k ctx' },
                 { vendor: 'nous', name: 'Hermes 3 405B', price: '$1.12', ctx: '128k ctx' },
               ].map((m, i) => (
-                <motion.div key={i} variants={item} className="bg-white/[0.03] border border-white/10 rounded-xl p-5 flex flex-col gap-2">
-                  <span className="text-xs uppercase tracking-wider text-white/40 font-mono">{m.vendor}</span>
-                  <span className="text-lg font-bold">{m.name}</span>
-                  <div className="flex items-center gap-3 mt-auto text-sm text-white/60">
-                    <span><strong className="text-white">{m.price}</strong> / M tok</span>
+                <motion.div
+                  key={i}
+                  variants={item}
+                  className="min-h-[116px] border-white/10 p-6 [&:not(:last-child)]:border-b md:p-7 md:[&:not(:last-child)]:border-b-0 md:[&:not(:nth-child(3n))]:border-r md:[&:nth-child(-n+3)]:border-b"
+                >
+                  <span className="block text-[10px] font-bold uppercase tracking-[0.32em] text-white/35">{m.vendor}</span>
+                  <span className="mt-2 block font-serif text-2xl text-[#efe6dc] md:text-[28px]">{m.name}</span>
+                  <div className="mt-4 flex items-center justify-between gap-4 font-mono text-xs font-bold text-white/35">
+                    <span><strong className="text-[#dffe00]">{m.price}</strong> / M tok</span>
                     <span>{m.ctx}</span>
                   </div>
                 </motion.div>
               ))}
             </motion.div>
+
+            <div className="mt-8 flex justify-center">
+              <a href="/gpu-earnings/" className="rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white/80 transition-colors hover:border-[#dffe00] hover:text-[#dffe00]">
+                earning by models →
+              </a>
+            </div>
           </div>
         </section>
 
@@ -284,8 +299,8 @@ export default function InferenceNetworkPage() {
                 </h2>
                 <p className="mt-4 text-white/60 text-lg">A single base-URL swap. Keep your SDK. Keep your prompts. Lose the closed-API tax.</p>
                 <div className="flex flex-wrap gap-4 mt-8">
-                  <a href="https://app.uomi.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
-                    Get an API key
+                  <a href="/participate" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
+                    Start Inferencing
                   </a>
                   <a href="https://docs.uomi.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
                     Read the docs →
