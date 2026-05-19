@@ -319,17 +319,29 @@ export default function InferenceNetworkPage() {
                   <pre className="p-5 text-sm font-mono leading-relaxed overflow-x-auto text-white/80">
 {`from openai import OpenAI
 
-client = OpenAI(
-  base_url="https://api.uomi.ai/v1",
-  api_key="sk-uomi-...",
-)
+    # UOMI Router is fully OpenAI-compatible
+    client = OpenAI(
+        base_url="https://gateway.uomi.ai/v1",
+        api_key="sk-uomi-...",
+    )
 
-resp = client.chat.completions.create(
-  model="llama-3.3-70b",
-  messages=[{"role": "user",
-              "content": "Hello, GPU mesh."}],
-  stream=True,
-)
+    # Streaming chat completion
+    stream = client.chat.completions.create(
+        model="Qwen/Qwen3.6-27B-FP8",
+        messages=[
+            {"role": "system",
+             "content": "You are a helpful assistant."},
+            {"role": "user",
+             "content": "Explain decentralized inference."},
+        ],
+        max_tokens=512,
+        temperature=0.7,
+        stream=True,
+    )
+    for chunk in stream:
+        delta = chunk.choices[0].delta.content
+        if delta:
+            print(delta, end="", flush=True)
 
 # 80% of this call paid the GPU that served it.
 # 20% just bought back $UOMI on-chain.`}
