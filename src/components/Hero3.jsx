@@ -29,7 +29,7 @@ const Hero3 = () => {
   return (
     <div className="relative w-full min-h-screen bg-black text-white overflow-hidden">
       {/* Head component positioned behind text */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 opacity-60">
         <Head
           className="w-full h-full transform" 
           onModelLoaded={handleModelLoaded} 

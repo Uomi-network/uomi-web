@@ -330,6 +330,24 @@ export const ChainIcon = () => (
     <path d="M13.5 13.5L15 15" stroke="currentColor" strokeWidth="0.75" strokeOpacity="0.5" />
   </svg>
 );
+
+export const NetworkIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Central node */}
+    <circle cx="12" cy="12" r="2" stroke="currentColor" strokeWidth="1.5" />
+    {/* Outer nodes */}
+    <circle cx="5" cy="7" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+    <circle cx="19" cy="7" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+    <circle cx="5" cy="17" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+    <circle cx="19" cy="17" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+    {/* Connections */}
+    <path d="M6.5 8L10.5 11" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+    <path d="M17.5 8L13.5 11" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+    <path d="M6.5 16L10.5 13" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+    <path d="M17.5 16L13.5 13" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+  </svg>
+);
+
 const menuItems = {
   Ecosystem: {
     sections: [
@@ -349,6 +367,7 @@ const menuItems = {
         title: "Inference Network",
         items: [
           {
+            icon: <NetworkIcon />,
             label: "How the network works",
             description: "Explore UOMI's distributed inference network.",
             link: "/inference-network",
@@ -789,6 +808,11 @@ const Navbar = () => {
                                           })}
                                         >
                                           <div className="flex items-center gap-2">
+                                            {item.icon && (
+                                              <span className="text-lg">
+                                                {item.icon}
+                                              </span>
+                                            )}
                                             <div
                                               className={`${themeStyles.text} font-medium group-hover:text-[#dffe00]`}
                                             >
