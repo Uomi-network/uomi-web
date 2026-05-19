@@ -174,7 +174,7 @@ export default function GpuEarningsPage() {
                 80% of every dollar earned lands directly in the wallet of the GPU that served the request. The other 20% buys back $UOMI on the open market.
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-10">
-                <a href="/participate" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
+                <a href="/gpu-providers/" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
                   Run a node →
                 </a>
                 <a href="/tokenomics" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">

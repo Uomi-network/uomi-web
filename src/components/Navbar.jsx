@@ -345,7 +345,7 @@ const menuItems = {
         ],
       },
       {
-        title: "inference Network",
+        title: "Inference Network",
         items: [
           {
             label: "How the network works",
@@ -361,7 +361,7 @@ const menuItems = {
   Developers: {
     sections: [
       {
-        title: "inference network",
+        title: "Inference Network",
         items: [
           { icon: <TokenomicsIcon />, label: "GPU Earnings", link: "/gpu-earnings" },
           { icon: <BrainIcon />, label: "GPU Providers", link: "/gpu-providers" },
@@ -888,7 +888,7 @@ const Navbar = () => {
             <div className="flex items-center gap-4">
               {/* CTA Button */}
               <motion.a
-                href="/participate"
+                href="/gpu-providers/"
                 className="hidden sm:block bg-[#dffe00] text-black px-5 py-2 rounded-full font-semibold shadow-md"
                 whileHover={{
                   scale: 1.05,
@@ -1047,7 +1047,7 @@ const Navbar = () => {
                 {/* Mobile CTA Button */}
                 <div className="py-4">
                   <motion.a
-                    href="/participate"
+                    href="/gpu-providers/"
                     className="block w-full text-center bg-[#dffe00] text-black py-2.5 rounded-full font-semibold"
                     whileTap={{ scale: 0.95 }}
                   >

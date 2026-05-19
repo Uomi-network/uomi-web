@@ -63,7 +63,7 @@ export default function GpuProvidersPage() {
               </h1>
 
               <p className="mt-6 text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-                The onboarding page for running GPUs on the UOMI Distributed Inference Network launches on 21 May 2026 at 18:00 Italian time.
+                The onboarding page for running GPUs on the UOMI Distributed Inference Network launches on 21 May 2026 at 16:00 UTC.
               </p>
             </motion.div>
 

@@ -61,14 +61,14 @@ export default function InferenceNetworkPage() {
                 <span className="italic text-[#dffe00]">GPUs you already own.</span>
               </h1>
               <p className="mt-6 text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-                A distributed inference network running frontier open-source models on consumer GPUs.{' '}
+                A distributed Inference Network running frontier open-source models on consumer GPUs.{' '}
                 <strong className="text-white">Permissionless, verifiable, paid per token.</strong>
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-10">
                 <a href="https://app.uomi.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
                   Start Inferencing
                 </a>
-                <a href="/participate" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
+                <a href="/gpu-providers/" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
                   Earn from your GPU
                 </a>
               </div>
@@ -299,7 +299,7 @@ export default function InferenceNetworkPage() {
                 </h2>
                 <p className="mt-4 text-white/60 text-lg">A single base-URL swap. Keep your SDK. Keep your prompts. Lose the closed-API tax.</p>
                 <div className="flex flex-wrap gap-4 mt-8">
-                  <a href="/participate" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
+                  <a href="/gpu-providers/" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
                     Start Inferencing
                   </a>
                   <a href="https://docs.uomi.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
@@ -349,10 +349,10 @@ resp = client.chat.completions.create(
               </h2>
               <p className="mt-4 text-white/60 text-lg">Pick a side of the market. Inference today, paid today.</p>
               <div className="flex flex-wrap justify-center gap-4 mt-10">
-                <a href="/participate" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
-                  Start inferencing
+                <a href="/gpu-providers/" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
+                  Start Inferencing
                 </a>
-                <a href="/participate" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
+                <a href="/gpu-providers/" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
                   Run a GPU node
                 </a>
               </div>
