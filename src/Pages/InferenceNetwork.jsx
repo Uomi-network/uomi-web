@@ -57,8 +57,8 @@ export default function InferenceNetworkPage() {
                 UOMI · Inference Network
               </span>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mt-4">
-                Open AI inference on the{' '}
-                <span className="italic text-[#dffe00]">GPUs you already own.</span>
+                Your GPU. Agent's AI calls.{' '}
+                <span className="italic text-[#dffe00]">Your Wallet.</span>
               </h1>
               <p className="mt-6 text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
                 A distributed Inference Network running frontier open-source models on consumer GPUs.{' '}
