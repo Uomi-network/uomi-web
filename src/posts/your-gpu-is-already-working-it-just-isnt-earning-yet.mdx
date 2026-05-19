@@ -1,0 +1,121 @@
+export const metadata = {
+	title: "Your GPU Is Already Working. It Just Isn't Earning Yet.",
+    description: "Why UOMI inference network is the most direct way to put idle compute to work and what you get for it.",
+	date: (new Date('2026-05-19')).getTime(),
+    image: "/assets-blog/your-gpu-is-already-working-it-just-isnt-earning-yet.jpg"
+};
+
+There are two kinds of GPU owners in the world right now.
+
+The first kind runs their hardware when they need it, a game, a render, a local model, and lets it sit when they don't. The GPU draws a trickle of standby power. The clock ticks. Nothing happens.
+
+The second kind is about to route that idle capacity into one of the fastest-growing demand pools in modern computing: AI inference. They get paid in UOMI tokens for every request their machine handles. Every time someone pays for inference on the network, that revenue is first used to acquire $UOMI from the open market. Eighty percent of the acquired tokens is distributed to node operators, while twenty percent is permanently burned, meaning the asset operators earn becomes scarcer as network demand grows.
+
+UOMI just opened the door to becoming the second kind of GPU owner.
+
+## **The problem the network solves**
+
+The AI inference market is enormous, growing fast, and almost entirely controlled by a small number of centralized providers. For autonomous AI agents, systems that make real decisions, sign real transactions, interact with real financial infrastructure, a centralized compute layer is a liability. You can't build a system that operates without human input if the core compute layer can unilaterally change its behavior, censor its outputs, or go down at an inconvenient moment.
+
+UOMI's OPoC (Optimistic Proof of Computation) verifies each inference against the distributed consensus of the network, using Deterministic Indeterminism to confirm results without requiring bit-identical outputs from heterogeneous hardware. Honest nodes cluster. Dishonest nodes get slashed.
+
+The result: a compute layer with the trust model of a smart contract. Verifiable, censorship-resistant, backed by economic consequences for misbehavior.
+
+## **What node operators actually do**
+
+Running a UOMI node means contributing GPU compute to the network's inference pool. Your machine serves requests routed from external consumers, OpenRouter, Hermes, OpenClaw, and third-party applications built on verifiable compute. You run the node software, configure the supported models, and let the network handle routing.
+
+### **What you get in return:**
+
+A share of inference revenue, proportional to tokens your node served. Pay-for-work. No vesting schedules, no emission cliffs. The demand is external. The payment is real.
+
+### **What the network gets from you:**
+
+Capacity, reliability, and geographic distribution. Nodes that run consistently earn more than nodes that churn, the system naturally selects for serious operators.
+
+## **Phase 1 · hardware requirements**
+
+Phase 1 supports eight configurations across four GPU families. The rule is simple: a minimum of two GPUs per node, with one exception, the Pro6K can run as a single-card setup because its memory and compute profile is sufficient on its own. Every other configuration requires at least a dual-GPU cluster.
+
+<table style={{width:'100%',borderCollapse:'collapse',color:'#fff',fontSize:'0.95rem',margin:'2rem 0'}}>
+<thead>
+<tr style={{borderBottom:'2px solid #444'}}>
+<th style={{padding:'0.75rem 1rem',textAlign:'left',color:'#aaa',fontWeight:600}}>Config</th>
+<th style={{padding:'0.75rem 1rem',textAlign:'left',color:'#aaa',fontWeight:600}}>Hardware</th>
+<th style={{padding:'0.75rem 1rem',textAlign:'left',color:'#aaa',fontWeight:600}}>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem'}}>A</td><td style={{padding:'0.75rem 1rem'}}>2× RTX 4090</td><td style={{padding:'0.75rem 1rem'}}>Baseline</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem'}}>B</td><td style={{padding:'0.75rem 1rem'}}>4× RTX 4090</td><td style={{padding:'0.75rem 1rem'}}>Extended</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem'}}>C</td><td style={{padding:'0.75rem 1rem'}}>2× RTX 5090</td><td style={{padding:'0.75rem 1rem'}}>Baseline Gen2</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem'}}>D</td><td style={{padding:'0.75rem 1rem'}}>4× RTX 5090</td><td style={{padding:'0.75rem 1rem'}}>Extended Gen2</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem'}}>E</td><td style={{padding:'0.75rem 1rem'}}>2× L40s</td><td style={{padding:'0.75rem 1rem'}}>Datacenter baseline</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem'}}>F</td><td style={{padding:'0.75rem 1rem'}}>4× L40s</td><td style={{padding:'0.75rem 1rem'}}>Datacenter extended</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem'}}>G</td><td style={{padding:'0.75rem 1rem'}}>1× Pro6K</td><td style={{padding:'0.75rem 1rem'}}>Single-card exception</td></tr>
+<tr><td style={{padding:'0.75rem 1rem'}}>H</td><td style={{padding:'0.75rem 1rem'}}>2× Pro6K</td><td style={{padding:'0.75rem 1rem'}}>Pro dual</td></tr>
+</tbody>
+</table>
+
+The node software runs alongside your existing workloads. If you need the GPU, for gaming, rendering, or anything else, you reclaim it. The network doesn't hold your hardware hostage.
+
+## **Supported models**
+
+Phase 1 nodes serve a curated set of open-weights models, the same ones powering the majority of today's production inference traffic across OpenRouter, Hermes, OpenClaw, and third-party AI applications. Each hardware configuration maps to a subset of models based on memory and compute fit.
+
+<table style={{width:'100%',borderCollapse:'collapse',color:'#fff',fontSize:'0.95rem',margin:'2rem 0'}}>
+<thead>
+<tr style={{borderBottom:'2px solid #444'}}>
+<th style={{padding:'0.75rem 1rem',textAlign:'left',color:'#aaa',fontWeight:600}}>Model</th>
+<th style={{padding:'0.75rem 1rem',textAlign:'left',color:'#aaa',fontWeight:600}}>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem',fontWeight:500}}>Qwen3.6 27B</td><td style={{padding:'0.75rem 1rem',color:'#ccc'}}>Qwen family · 27B parameter</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem',fontWeight:500}}>Qwen3.5-9B</td><td style={{padding:'0.75rem 1rem',color:'#ccc'}}>Qwen family · 9B parameter · lightweight</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem',fontWeight:500}}>Qwen3.5-35B-A3B</td><td style={{padding:'0.75rem 1rem',color:'#ccc'}}>Qwen family · 35B MoE · A3B active</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem',fontWeight:500}}>Qwen3.6 35B A3B</td><td style={{padding:'0.75rem 1rem',color:'#ccc'}}>Qwen family · 35B MoE · A3B active</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem',fontWeight:500}}>Gemma 4 3B</td><td style={{padding:'0.75rem 1rem',color:'#ccc'}}>Google Gemma 4 · 3B parameter</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem',fontWeight:500}}>Gemma 4 26B A4B</td><td style={{padding:'0.75rem 1rem',color:'#ccc'}}>Google Gemma 4 · 26B · A4B active</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem',fontWeight:500}}>GLM 5</td><td style={{padding:'0.75rem 1rem',color:'#ccc'}}>Zhipu GLM-5 series</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem',fontWeight:500}}>MiniMax M2.5</td><td style={{padding:'0.75rem 1rem',color:'#ccc'}}>MiniMax hybrid architecture</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem',fontWeight:500}}>DeepSeek V4 Flash</td><td style={{padding:'0.75rem 1rem',color:'#ccc'}}>DeepSeek V4 · Flash inference variant</td></tr>
+<tr style={{borderBottom:'1px solid #333'}}><td style={{padding:'0.75rem 1rem',fontWeight:500}}>Llama 3.3 70B</td><td style={{padding:'0.75rem 1rem',color:'#ccc'}}>Meta Llama 3.3 · 70B parameter</td></tr>
+<tr><td style={{padding:'0.75rem 1rem',fontWeight:500}}>gpt-oss-120b</td><td style={{padding:'0.75rem 1rem',color:'#ccc'}}>Open-source GPT · 120B parameter</td></tr>
+</tbody>
+</table>
+
+The supported model list expands across phases as the network's serving capacity grows.
+
+## **Why the economics are different here**
+
+UOMI's peer-to-pool architecture means your node doesn't get matched to a single buyer. It joins a pool serving the same model class, and the pool handles demand collectively. You get paid based on your contribution to the pool's total output.
+
+You don't need to be online 100% of the time to earn. Uptime improves your share, but the pool continues functioning whether or not your specific node is online at any given moment. For casual operators who want to contribute spare capacity without committing to data-center-style uptime, this is a materially more accessible entry point.
+
+* **100%** of inference revenue is used to acquire $UOMI from the open market  
+* **80%** of acquired $UOMI is distributed to node operators (proportional to tokens served)  
+* **20%** of acquired $UOMI is permanently burned  
+* **Day 1** burn mechanism active from Phase 1
+
+## **Phase 2 · sharding opens the door to everyone**
+
+Phase 2 introduces inference sharding, the ability to split model weights and computation across multiple machines, treating them as a single logical serving unit. This changes two things at once.
+
+First, it unlocks frontier-class models that no single Phase 1 box can host, the high-value demand tier the market pays premium rates to access. Operators who pool capacity step into that revenue.
+
+Second, and this is the bigger shift, sharding removes the two-GPU minimum. A single consumer GPU becomes a valid participant in a sharded cluster. That means the gamer with one RTX 4090, the developer with one 5090, the hobbyist with a single workstation card, all of them can now join the network, contribute compute to a shared pool, and earn $UOMI proportionally. Phase 2 is where the addressable supply base expands from "serious operators" to "anyone with a modern GPU."
+
+OPoC's verification guarantees extend cleanly into the sharded regime. The same statistical commitment that proves a single-cluster inference is correct also applies when the computation is distributed across many nodes.
+
+## **Phase 3 · mainnet, OPoC, and staking · Q3 2026**
+
+Phase 3 activates the full stack. All Phase 1 and Phase 2 hardware configurations continue operating as before, nothing is deprecated, no one is left behind. What Phase 3 adds is the formal introduction of OPoC consensus at the L1 level.
+
+Node operators, every configuration from the dual-4090 to the sharded consumer cluster, gain the option to stake UOMI to participate in OPoC consensus. This means the same hardware that earned inference revenue in Phase 1 and Phase 2 now also secures the blockchain itself, with staking rewards layered on top of inference earnings.
+
+The token you earn by running a node in Phase 1 is the same token you'll use to stake in Phase 3\. The work you do now isn't separate from the network's long-term security model. It is how that security model gets built.
+
+## **The inference economy is already here. The only question is whether your GPU is part of it.**
+
+Node documentation is live at uomi.ai/docs. Full hardware list published soon. To join the first wave of operators, and have your machine contributing to the buy-back-and-burn from day one, the time to set up is now.
