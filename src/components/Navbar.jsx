@@ -700,7 +700,7 @@ const Navbar = () => {
                               {/* Explore Section */}
                               <div>
                                 <h3 className="font-semibold text-[#dffe00] mb-3">
-                                  Explore
+                                  Layer 1
                                 </h3>
                                 <ul className="space-y-2">
                                   {menuItems[menuName].sections[0].items.map(
@@ -758,7 +758,7 @@ const Navbar = () => {
                               {/* Builder Programs Section */}
                               <div>
                                 <h3 className="font-semibold text-[#dffe00] mb-3">
-                                  Builder Programs
+                                  Inference Network
                                 </h3>
                                 <ul className="space-y-3">
                                   {menuItems[menuName].sections[1].items.map(

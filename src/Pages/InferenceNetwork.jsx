@@ -86,7 +86,7 @@ export default function InferenceNetworkPage() {
                 100% buy pressure. <span className="italic text-[#dffe00]">Then split.</span>
               </h2>
               <p className="mt-4 text-white/60 max-w-3xl mx-auto text-lg">
-                Every dollar of inference revenue market-buys $UOMI on-chain. The bought tokens then split: 80% to the GPU that served the request, 20% to the burn address. No emissions. No vesting cliffs.
+                Every dollar of inference revenue market-buys $UOMI on-chain. The bought tokens then split: 80% to the GPU that served the request, 20% to the burn address.
               </p>
             </motion.div>
 
