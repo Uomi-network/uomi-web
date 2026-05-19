@@ -64,7 +64,7 @@ const Hero3 = () => {
             className="text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto px-2"
             variants={itemVariants}
           >
-            UOMI is the first Layer 1 built for secure AI computation and unstoppable agents that think, act, trade, and evolve, without human input.
+            A <strong className="text-white">Layer 1</strong> for autonomous AI agents, and a <strong className="text-white">Distributed Inference Network</strong> for frontier open-source models. Both run on UOMI. Both are verifiable on-chain.
           </motion.p>
 
           <motion.div
