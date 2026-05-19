@@ -61,7 +61,7 @@ const Layer1Page = () => {
               </a>
             </div>
           </motion.div>
-          <NetworkSVG />
+          {/* <NetworkSVG /> */}
         </div>
       </section>
 
