@@ -66,10 +66,10 @@ export default function InferenceNetworkPage() {
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-10">
                 <a href="/gpu-providers/" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
-                  Start Inferencing
+                  Earn from your GPU
                 </a>
                 <a href="/gpu-providers/" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
-                  Earn from your GPU
+                  Start Inferencing
                 </a>
               </div>
             </motion.div>
@@ -282,7 +282,7 @@ export default function InferenceNetworkPage() {
 
             <div className="mt-8 flex justify-center">
               <a href="/gpu-earnings/" className="rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white/80 transition-colors hover:border-[#dffe00] hover:text-[#dffe00]">
-                earning by models →
+                Earnings by model →
               </a>
             </div>
           </div>
