@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -330,6 +330,24 @@ export const ChainIcon = () => (
     <path d="M13.5 13.5L15 15" stroke="currentColor" strokeWidth="0.75" strokeOpacity="0.5" />
   </svg>
 );
+
+export const NetworkIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Central node */}
+    <circle cx="12" cy="12" r="2" stroke="currentColor" strokeWidth="1.5" />
+    {/* Outer nodes */}
+    <circle cx="5" cy="7" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+    <circle cx="19" cy="7" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+    <circle cx="5" cy="17" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+    <circle cx="19" cy="17" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+    {/* Connections */}
+    <path d="M6.5 8L10.5 11" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+    <path d="M17.5 8L13.5 11" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+    <path d="M6.5 16L10.5 13" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+    <path d="M17.5 16L13.5 13" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+  </svg>
+);
+
 const menuItems = {
   Ecosystem: {
     sections: [
@@ -349,6 +367,7 @@ const menuItems = {
         title: "Inference Network",
         items: [
           {
+            icon: <NetworkIcon />,
             label: "How the network works",
             description: "Explore UOMI's distributed inference network.",
             link: "/inference-network",
@@ -589,6 +608,7 @@ const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showComingSoon, setShowComingSoon] = useState(false);
+  const navRef = useRef(null);
   const pathname = usePathname();
   const normalizedPath = pathname === "/" ? "/" : pathname?.replace(/\/$/, "");
   const hideHeaderCta = ["/", "/inference-network", "/gpu-earnings", "/gpu-providers"].includes(normalizedPath);
@@ -597,6 +617,17 @@ const Navbar = () => {
   const isExternalLink = (url) => {
     return url && (url.startsWith('http://') || url.startsWith('https://'));
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setActiveMenu(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // Initialize dark mode from system preference
   useEffect(() => {
@@ -658,7 +689,7 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav ref={navRef} className="hidden md:flex items-center space-x-8">
               {Object.keys(menuItems).map((menuName) => (
                 <div className="relative" key={menuName}>
                   <button
@@ -700,7 +731,7 @@ const Navbar = () => {
                               {/* Explore Section */}
                               <div>
                                 <h3 className="font-semibold text-[#dffe00] mb-3">
-                                  Explore
+                                  Layer 1
                                 </h3>
                                 <ul className="space-y-2">
                                   {menuItems[menuName].sections[0].items.map(
@@ -758,7 +789,7 @@ const Navbar = () => {
                               {/* Builder Programs Section */}
                               <div>
                                 <h3 className="font-semibold text-[#dffe00] mb-3">
-                                  Builder Programs
+                                  Inference Network
                                 </h3>
                                 <ul className="space-y-3">
                                   {menuItems[menuName].sections[1].items.map(
@@ -777,6 +808,11 @@ const Navbar = () => {
                                           })}
                                         >
                                           <div className="flex items-center gap-2">
+                                            {item.icon && (
+                                              <span className="text-lg">
+                                                {item.icon}
+                                              </span>
+                                            )}
                                             <div
                                               className={`${themeStyles.text} font-medium group-hover:text-[#dffe00]`}
                                             >
