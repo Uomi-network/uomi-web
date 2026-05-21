@@ -6,7 +6,7 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1.0] } },
 };
 
-const targetDate = new Date('2026-05-21T18:00:00+02:00').getTime();
+const targetDate = new Date('2026-05-22T10:00:00+02:00').getTime();
 
 function getTimeLeft() {
   const delta = Math.max(0, targetDate - Date.now());
