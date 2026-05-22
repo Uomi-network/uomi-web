@@ -66,10 +66,10 @@ export default function InferenceNetworkPage() {
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-10">
                 <a href="https://uomirouter.uomi.ai" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
-                  Start Inferencing
+                  Earn from your GPU
                 </a>
                 <a href="https://uomirouter.uomi.ai" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
-                  Earn from your GPU
+                  Start Inferencing
                 </a>
               </div>
             </motion.div>
