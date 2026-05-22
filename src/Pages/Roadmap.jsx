@@ -166,7 +166,7 @@ const OpocRoadmap = () => {
         >
           <h2 className="text-3xl md:text-5xl font-bold">Build alongside us.</h2>
           <div className="flex flex-wrap justify-center gap-4 mt-10">
-            <a href="/gpu-providers/" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
+            <a href="https://uomirouter.uomi.ai" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
               Join testnet
             </a>
             <a href="/grants" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">

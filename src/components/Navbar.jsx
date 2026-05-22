@@ -384,7 +384,7 @@ const menuItems = {
         title: "Inference Network",
         items: [
           { icon: <TokenomicsIcon />, label: "GPU Earnings", link: "/gpu-earnings" },
-          { icon: <BrainIcon />, label: "GPU Providers", link: "/gpu-providers" },
+          { icon: <BrainIcon />, label: "GPU Providers", link: "https://uomirouter.uomi.ai" },
         ],
       },
       {
@@ -611,7 +611,7 @@ const Navbar = () => {
   const navRef = useRef(null);
   const pathname = usePathname();
   const normalizedPath = pathname === "/" ? "/" : pathname?.replace(/\/$/, "");
-  const hideHeaderCta = ["/", "/inference-network", "/gpu-earnings", "/gpu-providers"].includes(normalizedPath);
+  const hideHeaderCta = ["/", "/inference-network", "/gpu-earnings"].includes(normalizedPath);
 
   // Helper function to detect external links
   const isExternalLink = (url) => {
@@ -929,7 +929,7 @@ const Navbar = () => {
               {/* CTA Button */}
               {!hideHeaderCta && (
                 <motion.a
-                  href="/gpu-providers/"
+                  href="https://uomirouter.uomi.ai"
                   className="hidden sm:block bg-[#dffe00] text-black px-5 py-2 rounded-full font-semibold shadow-md"
                   whileHover={{
                     scale: 1.05,
@@ -1090,7 +1090,7 @@ const Navbar = () => {
                 {!hideHeaderCta && (
                   <div className="py-4">
                     <motion.a
-                      href="/gpu-providers/"
+                      href="https://uomirouter.uomi.ai"
                       className="block w-full text-center bg-[#dffe00] text-black py-2.5 rounded-full font-semibold"
                       whileTap={{ scale: 0.95 }}
                     >

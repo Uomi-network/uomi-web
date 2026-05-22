@@ -65,10 +65,10 @@ export default function InferenceNetworkPage() {
                 <strong className="text-white">Permissionless, verifiable, paid per token.</strong>
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-10">
-                <a href="/gpu-providers/" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
+                <a href="https://uomirouter.uomi.ai" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
                   Start Inferencing
                 </a>
-                <a href="/gpu-providers/" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
+                <a href="https://uomirouter.uomi.ai" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
                   Earn from your GPU
                 </a>
               </div>
@@ -299,10 +299,10 @@ export default function InferenceNetworkPage() {
                 </h2>
                 <p className="mt-4 text-white/60 text-lg">A single base-URL swap. Keep your SDK. Keep your prompts. Lose the closed-API tax.</p>
                 <div className="flex flex-wrap gap-4 mt-8">
-                  <a href="/gpu-providers/" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
+                  <a href="https://uomirouter.uomi.ai" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
                     Start Inferencing
                   </a>
-                  <a href="/gpu-providers/" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
+                  <a href="https://uomirouter.uomi.ai" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
                     Read the docs →
                   </a>
                 </div>
@@ -361,10 +361,10 @@ for chunk in stream:
               </h2>
               <p className="mt-4 text-white/60 text-lg">Pick a side of the market. Inference today, paid today.</p>
               <div className="flex flex-wrap justify-center gap-4 mt-10">
-                <a href="/gpu-providers/" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
+                <a href="https://uomirouter.uomi.ai" className="px-6 py-3 rounded-lg bg-[#dffe00] text-black font-semibold hover:bg-[#c8e500] transition-colors">
                   Start Inferencing
                 </a>
-                <a href="/gpu-providers/" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
+                <a href="https://uomirouter.uomi.ai" className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
                   Run a GPU node
                 </a>
               </div>
